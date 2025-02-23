@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://example.com</loc>
+        <lastmod>2023-10-27T12:03:14.382Z</lastmod>
+    </url>
+    <url>
+        <loc>http://example.com/trade-risk.html</loc>
+        <lastmod>2023-10-27T12:03:14.382Z</lastmod>
+    </url>
+    <url>
+        <loc>http://example.com/claims.html</loc>
+        <lastmod>2023-10-27T12:03:14.382Z</lastmod>
+    </url>
+    <url>
+        <loc>http://example.com/privacy-policy.html</loc>
+        <lastmod>2023-10-27T12:03:14.382Z</lastmod>
+    </url>
+    <url>
+        <loc>http://example.com/about-us.html</loc>
+        <lastmod>2023-10-27T12:03:14.382Z</lastmod>
+    </url>
+    <url>
+        <loc>http://example.com/nft.html</loc>
+        <lastmod>2023-10-27T12:03:14.382Z</lastmod>
+    </url>
+</urlset>

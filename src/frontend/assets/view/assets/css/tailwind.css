@@ -1,0 +1,348 @@
+/* Fonts Family */
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* Sidebar */
+    .sidebar > div {
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.15), transparent 11%);
+    }
+
+    .sidebar .nav-link {
+        @apply relative flex items-center gap-4 py-2.5 pl-8 pr-8 transition-all duration-500 hover:text-white hover:before:w-full lg:pr-5 before:z-[-1] before:bottom-0 before:top-0 before:left-0 before:w-0 before:absolute before:duration-300;
+    }
+    .sidebar .nav-link.current  {
+        @apply text-white;
+    }
+
+    .sidebar .nav-link:before {
+        background: linear-gradient(268.41deg, #00fed0 -45.09%, #00b3ec 11.72%, #9756ff 84.74%, #d834ff 173.67%);
+    }
+
+    .animate-spin-slow {
+        -webkit-animation: spin 5s linear infinite;
+        animation: spin 5s linear infinite;
+    }
+
+    /* Text Gradiant */
+    .text-gradiant {
+        background: linear-gradient(89.81deg, #00fed0 0.86%, #00b3ec 30.37%, #9756ff 61.35%, #d834ff 99.09%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    /* ------- Clock Img Home Page ------- */
+    .cloak-img {
+        animation-name: cloak;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes cloak {
+        0% {
+            left: 0px;
+        }
+        100% {
+            left: 65%;
+        }
+    }
+
+    /* ------- Line arrow NFT Page ------- */
+    .line-arrow-one,
+    .line-arrow-two {
+        -webkit-animation: line 4s infinite;
+        -moz-animation: line 4s infinite;
+        -o-animation: line 4s infinite;
+        -ms-transition: line 4s infinite;
+        animation: line 4s infinite;
+    }
+    .line-arrow-two {
+        animation-delay: 1s;
+    }
+
+    @keyframes line {
+        0% {
+            left: 0;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+
+    /* ------- Bar Claims Page ------ */
+    .bar {
+        width: 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+        height: 0;
+        animation: bar 5s infinite alternate, colors 5s infinite alternate;
+    }
+    .bar.bar1 {
+        animation: bar-1 5s infinite alternate, colors 5s infinite alternate;
+    }
+    .bar.bar2 {
+        animation: bar-2 5s infinite alternate, colors 5s infinite alternate;
+    }
+    .bar.bar3 {
+        animation: bar-3 5s infinite alternate, colors 5s infinite alternate;
+    }
+    .bar.bar4 {
+        animation: bar-4 5s infinite alternate, colors 5s infinite alternate;
+    }
+    .bar.bar5 {
+        animation: bar-5 5s infinite alternate, colors 5s infinite alternate;
+    }
+    .bar.bar6 {
+        animation: bar-6 5s infinite alternate, colors 5s infinite alternate;
+    }
+    @keyframes bar {
+        0% {
+            height: 0;
+        }
+        33% {
+            height: 30px;
+        }
+        66% {
+            height: 10px;
+        }
+        100% {
+            height: 105px;
+        }
+    }
+    @keyframes bar-1 {
+        0% {
+            height: 0;
+        }
+        33% {
+            height: 50px;
+        }
+        66% {
+            height: 20px;
+        }
+        100% {
+            height: 130px;
+        }
+    }
+    @keyframes bar-2 {
+        0% {
+            height: 0;
+        }
+        33% {
+            height: 90px;
+        }
+        66% {
+            height: 70px;
+        }
+        100% {
+            height: 136px;
+        }
+    }
+    @keyframes bar-3 {
+        0% {
+            height: 0;
+        }
+        33% {
+            height: 50px;
+        }
+        66% {
+            height: 24px;
+        }
+        100% {
+            height: 109px;
+        }
+    }
+    @keyframes bar-4 {
+        0% {
+            height: 0;
+        }
+        33% {
+            height: 98px;
+        }
+        66% {
+            height: 34px;
+        }
+        100% {
+            height: 99px;
+        }
+    }
+    @keyframes bar-5 {
+        0% {
+            height: 0;
+        }
+        33% {
+            height: 30px;
+        }
+        66% {
+            height: 10px;
+        }
+        100% {
+            height: 148px;
+        }
+    }
+    @keyframes bar-6 {
+        0% {
+            height: 0;
+        }
+        33% {
+            height: 48px;
+        }
+        66% {
+            height: 22px;
+        }
+        100% {
+            height: 140px;
+        }
+    }
+
+    @keyframes colors {
+        0% {
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        50% {
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        100% {
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+    }
+
+    /* ------- Claims Page Arrow ------- */
+    .process-arrow {
+        position: relative;
+        animation-name: process-arrow;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes process-arrow {
+        0% {
+            width: 20px;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    .animate-text {
+        background-size: 200% auto;
+        animation: textclip 2s linear infinite;
+    }
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    /* ------- Button Hover ------- */
+    .wallet-btn:after {
+        direction: rtl;
+        box-shadow: -4px -4px 10px 0 rgba(255, 255, 255, 0.3), -4px -4px 5px 0 rgba(255, 255, 255, 0.3), 7px 7px 20px 0 #0d804f, 4px 4px 5px 0 #0d804f;
+    }
+
+    /* ------- Dott line About Page ------- */
+    .dott-line-animation {
+        stroke-dasharray: 30 30;
+        stroke-dashoffset: 0;
+        fill: none;
+        stroke-width: 3;
+        animation: dash-solutions 1s linear infinite;
+    }
+    @keyframes dash-solutions {
+        0% {
+            stroke-dashoffset: 60;
+        }
+
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    /* ---------- Process Icon Claims Page ---------- */
+    .process-icon {
+        animation: process-icon 1s linear infinite alternate;
+        position: relative;
+    }
+    @keyframes process-icon {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: 20px;
+        }
+    }
+
+    /* ---------- Dotted line Icon NFT Page ---------- */
+    .dotted-animation {
+        height: 2px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 50%, transparent 50%);
+        background-repeat: repeat-x;
+        background-size: 20px 2px;
+        animation: border-dance 4s infinite linear;
+    }
+    @keyframes border-dance {
+        0% {
+            background-position: 0px;
+        }
+        100% {
+            background-position: 300px;
+        }
+    }
+
+    /* ---------- Token Icon About Page ---------- */
+    .token {
+        transition: all 0.5s;
+        animation: token 4s infinite linear;
+        transform: rotate(0);
+    }
+    @keyframes token {
+        0% {
+            transform: rotate(0);
+        }
+        25% {
+            transform: rotate(25deg);
+        }
+        75% {
+            transform: rotate(-25deg);
+        }
+        100% {
+            transform: rotate(0);
+        }
+    }
+
+    /* ----------- Loader ----------- */
+    .lds-hourglass:after {
+        animation: lds-hourglass 1.2s infinite;
+    }
+    @keyframes lds-hourglass {
+        0% {
+            transform: rotate(0);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        50% {
+            transform: rotate(900deg);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+            transform: rotate(1800deg);
+        }
+    }
+}
+
+header.fix {
+    @apply bg-black;
+}
+
+/* Sidebar */
+.sidebar .current:before {
+    @apply w-full;
+}
+.sidebar.open-sidebar {
+    @apply left-0;
+}

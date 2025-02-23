@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>404 | Blockchain</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.svg" />
+	<!-- AOS Animation -->
+	<link href="assets/css/aos.css" rel="stylesheet" />
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+	<!-- screen loader -->
+	<div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-black">
+		<div class="lds-hourglass relative inline-flex h-20 w-20 after:m-2 after:block after:h-0 after:w-0 after:rounded-full after:border-[32px] after:border-primary after:border-r-transparent after:border-l-transparent"></div>
+	</div>
+
+	<div class="bg-black font-unbounded text-lg font-normal text-white antialiased">
+		<div class="relative h-full min-h-screen overflow-x-hidden bg-[url(../images/background.png)] bg-cover bg-fixed bg-center">
+			<div class="fixed inset-0 h-screen w-screen object-cover opacity-5">
+				<lottie-player src="assets/js/json/background.json" background="transparent" speed="1" loop autoplay class="h-full w-full"></lottie-player>
+			</div>
+			<img src="assets/images/404-bg.png" alt="" class="fixed left-auto right-0 bottom-0 w-full max-w-xl opacity-50 md:right-auto md:left-80 xl:opacity-100" />
+			<div onclick="toggleMenu()" class="overlay fixed inset-0 z-20 hidden bg-black/60"></div>
+			<header id="header" class="fixed inset-x-0 top-0 z-10 border-b-2 border-white/10 py-4 md:py-6 lg:z-30 lg:pl-[300px] lg:pr-4">
+				<div class="container">
+					<div class="flex items-center justify-between">
+						<a href="index.html" class="w-40 md:w-52">
+                            <span class="sr-only">logo</span>
+                            <img src="assets/images/logo.png" alt="" class="w-full" />
+                        </a>
+						<button type="button" class="wallet-btn relative hidden bg-primary p-3.5 text-lg text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block">
+							Connect wallet
+						</button>
+						<button type="button" onclick="toggleMenu()" class="block space-y-2 lg:hidden">
+							<span class="sr-only">Toggle menu</span>
+							<span class="block h-0.5 w-9 bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
+							<span class="block h-0.5 w-9 bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
+							<span class="block h-0.5 w-9 bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
+						</button>
+					</div>
+				</div>
+			</header>
+			<div class="h-full pt-20 md:pt-[109px]">
+				<!-- Sidebar -->
+				<div class="sidebar fixed top-0 -left-full z-30 h-full w-64 overflow-y-auto transition-all duration-500 lg:top-[109px] lg:left-0 lg:z-20 scrollbar-thin  scrollbar-thumb-white/5 scrollbar-track-white/10">
+					<div class="absolute inset-y-0 top-0 right-0 z-1 flex justify-end overflow-y-auto overflow-x-hidden !bg-black lg:-left-[761px] lg:h-[800px] lg:w-[1014px] lg:items-center lg:rounded-full lg:!bg-transparent lg:bg-opacity-20">
+						<ul class="w-64 space-y-4 py-4 text-base font-medium text-white/40 lg:space-y-7 lg:py-0">
+							<li>
+								<a href="index.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M3.77883 11.7342C3.00003 13.157 3.00003 14.8733 3.00003 18.3059V20.5875C3.00003 26.4388 3.00003 29.3645 4.75739 31.1823C6.51475 33.0001 9.34317 33.0001 15 33.0001H21C26.6569 33.0001 29.4853 33.0001 31.2427 31.1823C33 29.3645 33 26.4388 33 20.5875V18.3059C33 14.8733 33 13.157 32.2212 11.7342C31.4424 10.3114 30.0196 9.42833 27.174 7.66225L24.174 5.80036C21.1659 3.9335 19.6619 3.00006 18 3.00006C16.3381 3.00006 14.8341 3.9335 11.8261 5.80037L8.82608 7.66225C5.98045 9.42833 4.55763 10.3114 3.77883 11.7342ZM19.125 16.5001C19.125 15.8787 18.6213 15.3751 18 15.3751C17.3787 15.3751 16.875 15.8787 16.875 16.5001L16.875 19.8751H13.5C12.8787 19.8751 12.375 20.3788 12.375 21.0001C12.375 21.6214 12.8787 22.1251 13.5 22.1251H16.875V25.5001C16.875 26.1214 17.3787 26.6251 18 26.6251C18.6213 26.6251 19.125 26.1214 19.125 25.5001V22.1251H22.5C23.1213 22.1251 23.625 21.6214 23.625 21.0001C23.625 20.3788 23.1213 19.8751 22.5 19.8751H19.125L19.125 16.5001Z" fill="currentColor" />
+										</svg>
+									</span>
+									<span>Home</span>
+								</a>
+							</li>
+							<li>
+								<a href="trade-risk.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path d="M7.5 7.5C7.5 6.89002 7.1359 6.36507 6.61318 6.13065C6.82906 5.96061 7.09068 5.84422 7.37939 5.80297L23.5757 3.48921C25.383 3.23103 27 4.63341 27 6.45906V7.68903C26.5206 7.56563 26.018 7.5 25.5 7.5H7.5Z" fill="currentColor" />
+												<path d="M14.625 19.5C14.625 17.636 16.136 16.125 18 16.125C19.864 16.125 21.375 17.636 21.375 19.5C21.375 21.364 19.864 22.875 18 22.875C16.136 22.875 14.625 21.364 14.625 19.5Z" fill="currentColor" />
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M27 9.25606C28.7478 9.87381 30 11.5407 30 13.5V28.5C30 30.9853 27.9853 33 25.5 33H10.5C8.01472 33 6 30.9853 6 28.5V7.5C6 7.77322 6.07305 8.02937 6.20067 8.25C6.46003 8.69835 6.94479 9 7.5 9H25.5C26.026 9 26.5308 9.09023 27 9.25606ZM18 13.875C14.8934 13.875 12.375 16.3934 12.375 19.5C12.375 22.6066 14.8934 25.125 18 25.125C21.1066 25.125 23.625 22.6066 23.625 19.5C23.625 16.3934 21.1066 13.875 18 13.875ZM15 27.375C14.3787 27.375 13.875 27.8787 13.875 28.5C13.875 29.1213 14.3787 29.625 15 29.625H21C21.6213 29.625 22.125 29.1213 22.125 28.5C22.125 27.8787 21.6213 27.375 21 27.375H15Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Trade risk</span>
+								</a>
+							</li>
+							<li>
+								<a href="claims.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 15.625C4.5 10.8287 4.5 8.43048 5.06627 7.62367C5.63255 6.81687 7.88749 6.045 12.3974 4.50125L13.2566 4.20714C15.6075 3.40242 16.7829 3.00006 18 3.00006C19.2171 3.00006 20.3925 3.40242 22.7434 4.20714L23.6026 4.50125C28.1125 6.045 30.3675 6.81687 30.9337 7.62367C31.5 8.43048 31.5 10.8287 31.5 15.625V17.9871C31.5 26.4442 25.1416 30.5483 21.1522 32.291C20.07 32.7637 19.5289 33.0001 18 33.0001C16.4711 33.0001 15.93 32.7637 14.8478 32.291C10.8584 30.5483 4.5 26.4442 4.5 17.9871V15.625ZM21 13.5001C21 15.1569 19.6569 16.5001 18 16.5001C16.3431 16.5001 15 15.1569 15 13.5001C15 11.8432 16.3431 10.5001 18 10.5001C19.6569 10.5001 21 11.8432 21 13.5001ZM18 25.5001C24 25.5001 24 24.1569 24 22.5001C24 20.8432 21.3137 19.5001 18 19.5001C14.6863 19.5001 12 20.8432 12 22.5001C12 24.1569 12 25.5001 18 25.5001Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Claims</span>
+								</a>
+							</li>
+							<li>
+								<a href="privacy-policy.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M5.1967 5.1967C3 7.3934 3 10.9289 3 18C3 25.0711 3 28.6066 5.1967 30.8033C7.3934 33 10.9289 33 18 33C25.0711 33 28.6066 33 30.8033 30.8033C33 28.6066 33 25.0711 33 18C33 10.9289 33 7.3934 30.8033 5.1967C28.6066 3 25.0711 3 18 3C10.9289 3 7.3934 3 5.1967 5.1967ZM20.625 15C20.625 15.6213 21.1287 16.125 21.75 16.125H22.784L19.7652 19.1438C19.6187 19.2903 19.3813 19.2903 19.2348 19.1438L16.8562 16.7652C15.831 15.74 14.169 15.74 13.1438 16.7652L9.7045 20.2045C9.26516 20.6438 9.26516 21.3562 9.7045 21.7955C10.1438 22.2348 10.8562 22.2348 11.2955 21.7955L14.7348 18.3562C14.8813 18.2097 15.1187 18.2097 15.2652 18.3562L17.6438 20.7348C18.669 21.76 20.331 21.76 21.3562 20.7348L24.375 17.716V18.75C24.375 19.3713 24.8787 19.875 25.5 19.875C26.1213 19.875 26.625 19.3713 26.625 18.75V15C26.625 14.3787 26.1213 13.875 25.5 13.875H21.75C21.1287 13.875 20.625 14.3787 20.625 15Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Privacy policy</span>
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M18 33C24.6274 33 30 27.6274 30 21C30 14.3726 24.6274 9 18 9C11.3726 9 5.99997 14.3726 5.99997 21C5.99997 27.6274 11.3726 33 18 33ZM18 16.5C17.5739 16.5 17.2889 17.0113 16.7189 18.0338L16.5714 18.2983C16.4095 18.5889 16.3285 18.7342 16.2022 18.83C16.0759 18.9259 15.9187 18.9615 15.6041 19.0326L15.3178 19.0974C14.2109 19.3478 13.6575 19.4731 13.5258 19.8965C13.3941 20.3199 13.7714 20.7611 14.526 21.6435L14.7212 21.8717C14.9357 22.1225 15.0429 22.2479 15.0911 22.403C15.1393 22.5581 15.1231 22.7254 15.0907 23.0599L15.0612 23.3645C14.9471 24.5418 14.8901 25.1304 15.2348 25.3921C15.5795 25.6538 16.0977 25.4152 17.134 24.938L17.4021 24.8146C17.6966 24.679 17.8439 24.6112 18 24.6112C18.1561 24.6112 18.3033 24.679 18.5978 24.8146L18.8659 24.938C19.9023 25.4152 20.4204 25.6538 20.7652 25.3921C21.1099 25.1304 21.0528 24.5418 20.9387 23.3645L20.9092 23.0599C20.8768 22.7254 20.8606 22.5581 20.9088 22.403C20.9571 22.2479 21.0643 22.1225 21.2787 21.8718L21.4739 21.6435C22.2285 20.7611 22.6058 20.3199 22.4741 19.8965C22.3425 19.4731 21.789 19.3478 20.6822 19.0974L20.3958 19.0326C20.0813 18.9615 19.924 18.9259 19.7977 18.83C19.6715 18.7342 19.5905 18.5889 19.4285 18.2983L19.281 18.0338C18.7111 17.0113 18.4261 16.5 18 16.5Z" fill="currentColor" />
+												<path d="M16.5 3H19.5C22.3284 3 23.7426 3 24.6213 3.87868C25.4876 4.74496 25.4998 6.13176 25.5 8.88107C23.3215 7.53004 20.7519 6.75 18 6.75C15.2481 6.75 12.6784 7.53004 10.5 8.88107C10.5002 6.13176 10.5124 4.74496 11.3787 3.87868C12.2574 3 13.6716 3 16.5 3Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>About us</span>
+								</a>
+							</li>
+							<li>
+								<a href="nft.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3ZM16.8411 12.8536L13.8185 15.2606C12.5504 16.2704 11.9164 16.7753 12.0401 17.3391L12.0467 17.367C12.1877 17.9273 12.9914 18.1427 14.5989 18.5734C15.4921 18.8127 15.9388 18.9324 16.1483 19.271L16.1591 19.2888C16.3612 19.6314 16.2462 20.0606 16.0162 20.9188L15.9561 21.1431C15.3185 23.5226 14.9997 24.7124 15.6137 25.0966C16.2277 25.4809 17.2046 24.7029 19.1584 23.1471L22.181 20.7401C23.4491 19.7303 24.0832 19.2253 23.9594 18.6616L23.9528 18.6336C23.8118 18.0733 23.0081 17.858 21.4006 17.4273C20.5074 17.1879 20.0608 17.0683 19.8512 16.7297L19.8404 16.7119C19.6383 16.3692 19.7533 15.9401 19.9833 15.0819L20.0434 14.8575C20.681 12.478 20.9998 11.2882 20.3858 10.904C19.7718 10.5197 18.7949 11.2977 16.8411 12.8536Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Nft</span>
+								</a>
+							</li>
+							<li class="sticky inset-x-0 bottom-0">
+								<button type="button" class="block w-full bg-primary p-3.5 text-black shadow-[0_4px_0_#0D804F] lg:hidden">Connect wallet</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Inner Content -->
+				<div class="relative z-1 w-full overflow-hidden pb-5 lg:pl-[300px] lg:pr-4">
+					<div class="container">
+						<div class="flex flex-col items-center justify-center gap-10 py-10 xl:flex-row xl:justify-between 2xl:py-0">
+							<div>
+								<div class="pb-16 text-center xl:text-left">
+									<h2 class="mb-6 text-4xl font-semibold !leading-tight md:text-5xl xl:pr-10" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1000">
+										<span class="animate-text bg-gradient-to-r from-[#9A42FE] to-[#23EF9B] bg-clip-text text-transparent">OPPS! page not found</span>
+									</h2>
+									<p class="font-light leading-7 opacity-60">Looks like this page can’t be found. May be it was removed</p>
+								</div>
+								<div class="text-center xl:text-left">
+									<a href="index.html" class="wallet-btn relative inline-flex bg-gradient-to-r from-[#9F52FF] to-[#11A9EE] py-4 px-7 text-white transition-all after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-500 hover:bg-black hover:from-transparent hover:to-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full md:py-6 md:text-[22px]">Back to home</a>
+								</div>
+							</div>
+							<div class="max-w-xl" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1000">
+								<img src="assets/images/404-banner.png" alt="" class="h-full w-full object-cover" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- LottieFiles Animation JS -->
+	<script src="assets/js/lottie-player.js"></script>
+	<!-- AOS Animation -->
+	<script src="assets/js/aos.js"></script>
+	<!-- Custom Js -->
+	<script src="assets/js/custom.js"></script>
+</body>
+
+</html>

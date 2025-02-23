@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>NFT | Blockchain</title>
+	<meta name="description" content="Invest in creators & get unique NFT" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="http://example.com/nft.html" />
+    <link rel="alternate" hrefLang="x-default" href="http://example.com/nft.html" />
+    <meta property="og:title" content="NFT | Blockchain" />
+    <meta property="og:description" content="Invest in creators & get unique NFT" />
+    <meta property="og:url" content="http://example.com/nft.html" />
+    <meta property="og:site_name" content="Blockchain" />
+    <meta property="og:image" content="http://example.com/assets/images/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Blockchain" />
+    <meta name="twitter:title" content="NFT | Blockchain" />
+    <meta name="twitter:description" content="Invest in creators & get unique NFT" />
+    <meta name="twitter:image" content="http://example.com/assets/images/logo.png" />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Blockchain","url":"http://example.com","id":"http://example.com#organization","logo":"http://example.com/assets/images/logo.png","legalName":"Blockchain","sameAs":["http://example.com"]}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Blockchain","url":"http://example.com","id":"http://example.com#website"}</script>
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.svg" />
+	<!-- AOS Animation -->
+	<link href="assets/css/aos.css" rel="stylesheet" />
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+	<!-- screen loader -->
+	<div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-black">
+		<div class="lds-hourglass relative inline-flex h-20 w-20 after:m-2 after:block after:h-0 after:w-0 after:rounded-full after:border-[32px] after:border-primary after:border-r-transparent after:border-l-transparent"></div>
+	</div>
+
+	<div class="bg-black font-unbounded text-lg font-normal text-white antialiased">
+		<div class="relative h-full min-h-screen overflow-x-hidden bg-[url(../images/background.png)] bg-cover bg-fixed bg-center">
+			<div class="fixed inset-0 h-screen w-screen object-cover opacity-5">
+				<lottie-player src="assets/js/json/background.json" background="transparent" speed="1" loop autoplay class="h-full w-full"></lottie-player>
+			</div>
+			<div onclick="toggleMenu()" class="overlay fixed inset-0 z-20 hidden bg-black/60"></div>
+			<header id="header" class="fixed inset-x-0 top-0 z-10 border-b-2 border-white/10 py-4 md:py-6 lg:z-30 lg:pl-[300px] lg:pr-4">
+				<div class="container">
+					<div class="flex items-center justify-between">
+						<a href="index.html" class="w-40 md:w-52">
+                            <span class="sr-only">logo</span>
+                            <img src="assets/images/logo.png" alt="" class="w-full" />
+                        </a>
+						<button type="button" class="wallet-btn relative hidden bg-primary p-3.5 text-lg text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block">
+							Connect wallet
+						</button>
+						<button type="button" onclick="toggleMenu()" class="block space-y-2 lg:hidden">
+							<span class="sr-only">Toggle menu</span>
+							<span class="block h-0.5 w-9 bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
+							<span class="block h-0.5 w-9 bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
+							<span class="block h-0.5 w-9 bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
+						</button>
+					</div>
+				</div>
+			</header>
+			<div class="h-full pt-20 md:pt-[109px]">
+				<!-- Sidebar -->
+				<div class="sidebar fixed top-0 -left-full z-30 h-full w-64 overflow-y-auto transition-all duration-500 lg:top-[109px] lg:left-0 lg:z-20 scrollbar-thin  scrollbar-thumb-white/5 scrollbar-track-white/10">
+					<div class="absolute inset-y-0 top-0 right-0 z-1 flex justify-end overflow-y-auto overflow-x-hidden !bg-black lg:-left-[761px] lg:h-[800px] lg:w-[1014px] lg:items-center lg:rounded-full lg:!bg-transparent lg:bg-opacity-20">
+						<ul class="w-64 space-y-4 py-4 text-base font-medium text-white/40 lg:space-y-7 lg:py-0">
+							<li>
+								<a href="index.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M3.77883 11.7342C3.00003 13.157 3.00003 14.8733 3.00003 18.3059V20.5875C3.00003 26.4388 3.00003 29.3645 4.75739 31.1823C6.51475 33.0001 9.34317 33.0001 15 33.0001H21C26.6569 33.0001 29.4853 33.0001 31.2427 31.1823C33 29.3645 33 26.4388 33 20.5875V18.3059C33 14.8733 33 13.157 32.2212 11.7342C31.4424 10.3114 30.0196 9.42833 27.174 7.66225L24.174 5.80036C21.1659 3.9335 19.6619 3.00006 18 3.00006C16.3381 3.00006 14.8341 3.9335 11.8261 5.80037L8.82608 7.66225C5.98045 9.42833 4.55763 10.3114 3.77883 11.7342ZM19.125 16.5001C19.125 15.8787 18.6213 15.3751 18 15.3751C17.3787 15.3751 16.875 15.8787 16.875 16.5001L16.875 19.8751H13.5C12.8787 19.8751 12.375 20.3788 12.375 21.0001C12.375 21.6214 12.8787 22.1251 13.5 22.1251H16.875V25.5001C16.875 26.1214 17.3787 26.6251 18 26.6251C18.6213 26.6251 19.125 26.1214 19.125 25.5001V22.1251H22.5C23.1213 22.1251 23.625 21.6214 23.625 21.0001C23.625 20.3788 23.1213 19.8751 22.5 19.8751H19.125L19.125 16.5001Z" fill="currentColor" />
+										</svg>
+									</span>
+									<span>Home</span>
+								</a>
+							</li>
+							<li>
+								<a href="trade-risk.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path d="M7.5 7.5C7.5 6.89002 7.1359 6.36507 6.61318 6.13065C6.82906 5.96061 7.09068 5.84422 7.37939 5.80297L23.5757 3.48921C25.383 3.23103 27 4.63341 27 6.45906V7.68903C26.5206 7.56563 26.018 7.5 25.5 7.5H7.5Z" fill="currentColor" />
+												<path d="M14.625 19.5C14.625 17.636 16.136 16.125 18 16.125C19.864 16.125 21.375 17.636 21.375 19.5C21.375 21.364 19.864 22.875 18 22.875C16.136 22.875 14.625 21.364 14.625 19.5Z" fill="currentColor" />
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M27 9.25606C28.7478 9.87381 30 11.5407 30 13.5V28.5C30 30.9853 27.9853 33 25.5 33H10.5C8.01472 33 6 30.9853 6 28.5V7.5C6 7.77322 6.07305 8.02937 6.20067 8.25C6.46003 8.69835 6.94479 9 7.5 9H25.5C26.026 9 26.5308 9.09023 27 9.25606ZM18 13.875C14.8934 13.875 12.375 16.3934 12.375 19.5C12.375 22.6066 14.8934 25.125 18 25.125C21.1066 25.125 23.625 22.6066 23.625 19.5C23.625 16.3934 21.1066 13.875 18 13.875ZM15 27.375C14.3787 27.375 13.875 27.8787 13.875 28.5C13.875 29.1213 14.3787 29.625 15 29.625H21C21.6213 29.625 22.125 29.1213 22.125 28.5C22.125 27.8787 21.6213 27.375 21 27.375H15Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Trade risk</span>
+								</a>
+							</li>
+							<li>
+								<a href="claims.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 15.625C4.5 10.8287 4.5 8.43048 5.06627 7.62367C5.63255 6.81687 7.88749 6.045 12.3974 4.50125L13.2566 4.20714C15.6075 3.40242 16.7829 3.00006 18 3.00006C19.2171 3.00006 20.3925 3.40242 22.7434 4.20714L23.6026 4.50125C28.1125 6.045 30.3675 6.81687 30.9337 7.62367C31.5 8.43048 31.5 10.8287 31.5 15.625V17.9871C31.5 26.4442 25.1416 30.5483 21.1522 32.291C20.07 32.7637 19.5289 33.0001 18 33.0001C16.4711 33.0001 15.93 32.7637 14.8478 32.291C10.8584 30.5483 4.5 26.4442 4.5 17.9871V15.625ZM21 13.5001C21 15.1569 19.6569 16.5001 18 16.5001C16.3431 16.5001 15 15.1569 15 13.5001C15 11.8432 16.3431 10.5001 18 10.5001C19.6569 10.5001 21 11.8432 21 13.5001ZM18 25.5001C24 25.5001 24 24.1569 24 22.5001C24 20.8432 21.3137 19.5001 18 19.5001C14.6863 19.5001 12 20.8432 12 22.5001C12 24.1569 12 25.5001 18 25.5001Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Claims</span>
+								</a>
+							</li>
+							<li>
+								<a href="privacy-policy.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M5.1967 5.1967C3 7.3934 3 10.9289 3 18C3 25.0711 3 28.6066 5.1967 30.8033C7.3934 33 10.9289 33 18 33C25.0711 33 28.6066 33 30.8033 30.8033C33 28.6066 33 25.0711 33 18C33 10.9289 33 7.3934 30.8033 5.1967C28.6066 3 25.0711 3 18 3C10.9289 3 7.3934 3 5.1967 5.1967ZM20.625 15C20.625 15.6213 21.1287 16.125 21.75 16.125H22.784L19.7652 19.1438C19.6187 19.2903 19.3813 19.2903 19.2348 19.1438L16.8562 16.7652C15.831 15.74 14.169 15.74 13.1438 16.7652L9.7045 20.2045C9.26516 20.6438 9.26516 21.3562 9.7045 21.7955C10.1438 22.2348 10.8562 22.2348 11.2955 21.7955L14.7348 18.3562C14.8813 18.2097 15.1187 18.2097 15.2652 18.3562L17.6438 20.7348C18.669 21.76 20.331 21.76 21.3562 20.7348L24.375 17.716V18.75C24.375 19.3713 24.8787 19.875 25.5 19.875C26.1213 19.875 26.625 19.3713 26.625 18.75V15C26.625 14.3787 26.1213 13.875 25.5 13.875H21.75C21.1287 13.875 20.625 14.3787 20.625 15Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Privacy policy</span>
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html" class="nav-link">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M18 33C24.6274 33 30 27.6274 30 21C30 14.3726 24.6274 9 18 9C11.3726 9 5.99997 14.3726 5.99997 21C5.99997 27.6274 11.3726 33 18 33ZM18 16.5C17.5739 16.5 17.2889 17.0113 16.7189 18.0338L16.5714 18.2983C16.4095 18.5889 16.3285 18.7342 16.2022 18.83C16.0759 18.9259 15.9187 18.9615 15.6041 19.0326L15.3178 19.0974C14.2109 19.3478 13.6575 19.4731 13.5258 19.8965C13.3941 20.3199 13.7714 20.7611 14.526 21.6435L14.7212 21.8717C14.9357 22.1225 15.0429 22.2479 15.0911 22.403C15.1393 22.5581 15.1231 22.7254 15.0907 23.0599L15.0612 23.3645C14.9471 24.5418 14.8901 25.1304 15.2348 25.3921C15.5795 25.6538 16.0977 25.4152 17.134 24.938L17.4021 24.8146C17.6966 24.679 17.8439 24.6112 18 24.6112C18.1561 24.6112 18.3033 24.679 18.5978 24.8146L18.8659 24.938C19.9023 25.4152 20.4204 25.6538 20.7652 25.3921C21.1099 25.1304 21.0528 24.5418 20.9387 23.3645L20.9092 23.0599C20.8768 22.7254 20.8606 22.5581 20.9088 22.403C20.9571 22.2479 21.0643 22.1225 21.2787 21.8718L21.4739 21.6435C22.2285 20.7611 22.6058 20.3199 22.4741 19.8965C22.3425 19.4731 21.789 19.3478 20.6822 19.0974L20.3958 19.0326C20.0813 18.9615 19.924 18.9259 19.7977 18.83C19.6715 18.7342 19.5905 18.5889 19.4285 18.2983L19.281 18.0338C18.7111 17.0113 18.4261 16.5 18 16.5Z" fill="currentColor" />
+												<path d="M16.5 3H19.5C22.3284 3 23.7426 3 24.6213 3.87868C25.4876 4.74496 25.4998 6.13176 25.5 8.88107C23.3215 7.53004 20.7519 6.75 18 6.75C15.2481 6.75 12.6784 7.53004 10.5 8.88107C10.5002 6.13176 10.5124 4.74496 11.3787 3.87868C12.2574 3 13.6716 3 16.5 3Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>About us</span>
+								</a>
+							</li>
+							<li>
+								<a href="nft.html" class="nav-link current">
+									<span class="shrink-0">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+											<g>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3ZM16.8411 12.8536L13.8185 15.2606C12.5504 16.2704 11.9164 16.7753 12.0401 17.3391L12.0467 17.367C12.1877 17.9273 12.9914 18.1427 14.5989 18.5734C15.4921 18.8127 15.9388 18.9324 16.1483 19.271L16.1591 19.2888C16.3612 19.6314 16.2462 20.0606 16.0162 20.9188L15.9561 21.1431C15.3185 23.5226 14.9997 24.7124 15.6137 25.0966C16.2277 25.4809 17.2046 24.7029 19.1584 23.1471L22.181 20.7401C23.4491 19.7303 24.0832 19.2253 23.9594 18.6616L23.9528 18.6336C23.8118 18.0733 23.0081 17.858 21.4006 17.4273C20.5074 17.1879 20.0608 17.0683 19.8512 16.7297L19.8404 16.7119C19.6383 16.3692 19.7533 15.9401 19.9833 15.0819L20.0434 14.8575C20.681 12.478 20.9998 11.2882 20.3858 10.904C19.7718 10.5197 18.7949 11.2977 16.8411 12.8536Z" fill="currentColor" />
+											</g>
+										</svg>
+									</span>
+									<span>Nft</span>
+								</a>
+							</li>
+							<li class="sticky inset-x-0 bottom-0">
+								<button type="button" class="block w-full bg-primary p-3.5 text-black shadow-[0_4px_0_#0D804F] lg:hidden">Connect wallet</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Inner Content -->
+				<div class="relative z-1 w-full overflow-hidden pb-5 lg:pl-[300px] lg:pr-4">
+					<div class="container">
+						<div class="grid gap-5 pt-14 xl:grid-cols-2 xl:pt-9">
+							<div class="xl:pt-24 2xl:w-4/5">
+								<div class="text-center xl:text-left">
+									<h2 class="mb-6 text-4xl font-semibold !leading-tight md:text-5xl xl:pr-10" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
+										<span class="animate-text bg-gradient-to-r from-[#9A42FE] to-[#23EF9B] bg-clip-text text-transparent">Invest in creators</span>
+										& get unique NFT
+									</h2>
+									<p class="font-light leading-7 opacity-40">The platform helps investors to make easy to purchase and sell their NFT tokens</p>
+								</div>
+								<div class="relative mt-12 flex flex-wrap justify-between gap-x-2 border-2 border-tertiary bg-tertiary/20 p-6 pt-10 text-center text-sm font-medium leading-7 sm:text-base md:mt-20 xl:max-w-lg">
+									<div class="space-y-1">
+										<span id="days" class="text-lg font-semibold sm:text-[26px]"></span>
+										<h5 class="opacity-50">Days</h5>
+									</div>
+									<div class="space-y-1">
+										<span id="hours" class="text-lg font-semibold sm:text-[26px]"></span>
+										<h5 class="opacity-50">Hours</h5>
+									</div>
+									<div class="space-y-1">
+										<span id="minutes" class="text-lg font-semibold sm:text-[26px]"></span>
+										<h5 class="opacity-50">Minutes</h5>
+									</div>
+									<div class="space-y-1">
+										<span id="seconds" class="text-lg font-semibold sm:text-[26px]"></span>
+										<h5 class="opacity-50">Seconds</h5>
+									</div>
+									<div class="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-gradient-to-r from-secondary to-primary py-2 px-4 text-xl">
+										Token sale end in
+									</div>
+									<img src="assets/images/star-way.png" alt="" class="absolute left-full" data-aos="fade-right" data-aos-duration="3000" data-aos-delay="800" />
+								</div>
+							</div>
+							<div class="mx-auto pt-10 xl:ml-auto xl:mr-0 xl:pr-16 xl:pt-0">
+								<div class="relative mx-auto overflow-hidden rounded-b-full bg-gradient-to-b from-secondary/25 to-primary/25 p-4 sm:h-[414px] sm:w-64 sm:overflow-visible xl:ml-auto">
+									<img src="assets/images/line-background.png" alt="" class="absolute left-24 -top-2" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="800" />
+									<img src="assets/images/nft-1.png" alt="" class="top-4 -left-40 mx-auto sm:absolute" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="800" />
+									<img src="assets/images/nft-2.png" alt="" class="-bottom-12 -right-16 mx-auto mt-4 sm:absolute sm:mt-0" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="800" />
+									<div class="group absolute left-2 -bottom-14 hidden h-28 w-28 shrink-0 items-center justify-center rounded-full border border-[#9E9E9E] p-1 duration-300 hover:border-primary hover:text-primary xl:-mt-6 xl:inline-flex">
+										<img src="assets/images/your-creative-partner-txt.png" alt="" class="animate-spin-slow" />
+										<span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 group-hover:scale-90">
+											<svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+												<path d="M0.75 26.9661C0.75 27.5628 0.987054 28.1351 1.40901 28.557C1.83097 28.979 2.40326 29.2161 3 29.2161C3.59674 29.2161 4.16903 28.979 4.59099 28.557C5.01295 28.1351 5.25 27.5628 5.25 26.9661L5.25 9.32606C5.24975 9.25287 5.27091 9.18121 5.3109 9.1199C5.35088 9.0586 5.40792 9.01034 5.475 8.98106C5.54473 8.95141 5.62158 8.94272 5.69617 8.95604C5.77075 8.96935 5.83985 9.00411 5.895 9.05606L25.395 28.5561C25.6038 28.7658 25.8519 28.9325 26.1251 29.0464C26.3983 29.1603 26.6912 29.2193 26.9872 29.22C27.2832 29.2207 27.5764 29.1631 27.8501 29.0504C28.1239 28.9378 28.3727 28.7724 28.5825 28.5636C29.0062 28.1419 29.245 27.5691 29.2464 26.9714C29.2478 26.3736 29.0117 25.7997 28.59 25.3761L9.09 5.87606C9.04938 5.81635 9.02765 5.74579 9.02765 5.67356C9.02765 5.60134 9.04938 5.53078 9.09 5.47106C9.11928 5.40398 9.16754 5.34694 9.22885 5.30696C9.29015 5.26698 9.36181 5.24581 9.435 5.24606L27 5.24606C27.5967 5.24606 28.169 5.00901 28.591 4.58705C29.0129 4.1651 29.25 3.5928 29.25 2.99607C29.25 2.39933 29.0129 1.82703 28.591 1.40507C28.169 0.983117 27.5967 0.746065 27 0.746065L4.5 0.746063C4.00364 0.745171 3.51204 0.842825 3.05371 1.03337C2.59538 1.22391 2.17944 1.50355 1.83 1.85606C1.14758 2.55469 0.76076 3.48951 0.750002 4.46606L0.75 26.9661Z" fill="currentColor" />
+											</svg>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="py-14 sm:py-28">
+							<h2 class="pb-16 text-center text-4xl font-semibold" data-aos="zoom-in" data-aos-duration="1000">
+								Supported <span class="animate-text bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Crypto Wallet</span>
+							</h2>
+							<div class="relative mx-auto grid max-w-4xl grid-cols-2 justify-between gap-y-8 gap-x-4 font-medium sm:grid-cols-4">
+								<div class="absolute top-10 left-1/2 hidden h-0.5 w-[calc(100%_-_170px)] -translate-x-1/2 rounded-full bg-gradient-to-r from-secondary to-primary opacity-50 sm:block">
+									<span class="line-arrow-one absolute top-1/2 w-5 -translate-y-1/2">
+										<img src="assets/images/line-arrow.png" alt="" />
+									</span>
+									<span class="line-arrow-two absolute top-1/2 w-5 -translate-y-1/2">
+										<img src="assets/images/line-arrow.png" alt="" />
+									</span>
+								</div>
+								<div class="z-1 space-y-5 text-center">
+									<div class="inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#3D391A]">
+										<img src="assets/images/bitcoin.svg" alt="" class="animate-spin-slow" />
+									</div>
+									<h6>Bitcoin</h6>
+								</div>
+								<div class="z-1 space-y-5 text-center">
+									<div class="inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#1A2923]">
+										<img src="assets/images/ethereum.svg" alt="" class="animate-spin-slow" />
+									</div>
+									<h6>Ethereum</h6>
+								</div>
+								<div class="z-1 space-y-5 text-center">
+									<div class="inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#1A1A42]">
+										<img src="assets/images/teramox.svg" alt="" class="animate-spin-slow" />
+									</div>
+									<h6>Teramox</h6>
+								</div>
+								<div class="z-1 space-y-5 text-center">
+									<div class="inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#351222]">
+										<img src="assets/images/dogecoin.svg" alt="" class="animate-spin-slow" />
+									</div>
+									<h6>Doge coin</h6>
+								</div>
+							</div>
+						</div>
+						<div class="rounded-[50px] bg-white/10 p-5 sm:p-10">
+							<div class="items-center border-white/10 py-4 sm:border-y-[3px] sm:py-12 xl:flex">
+								<div class="border-white/10 pt-10 pb-8 text-center xl:w-1/4 xl:border-r-[3px] xl:pt-16 xl:text-left">
+									<div class="relative inline-block pb-8 xl:pb-20" data-aos="zoom-out" data-aos-duration="1000">
+										<h3 class="inline-block bg-gradient-to-r from-secondary to-primary bg-clip-text text-2xl font-medium text-transparent">Microverse</h3>
+										<span class="absolute left-full bottom-full bg-gradient-to-r from-secondary to-primary p-1 text-xl">Beta</span>
+									</div>
+									<h2 class="text-2xl font-semibold sm:text-4xl" data-aos="zoom-out" data-aos-duration="1000">The hurricane creative</h2>
+								</div>
+								<div class="space-y-6 text-center font-light leading-8 opacity-40 xl:w-3/4 xl:pl-10 xl:text-left xl:text-[22px]">
+									<p>
+										Where do NFTs go for a good time? The Microverse, obviously! Think of our world builder tool as a magic wand, where you flick your wrist a few times and
+										watch in wonder as your own 2D world comes to life.
+									</p>
+									<p>Your fans deserve a hangout as creative as they are, so drop into the Microverse and build it for them!</p>
+								</div>
+							</div>
+						</div>
+						<div class="py-16 md:py-28">
+							<div class="pb-10 text-center md:pb-24">
+								<h2 class="pb-8 text-4xl font-semibold" data-aos="zoom-in" data-aos-duration="1000">
+									How <span class="animate-text bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">It Works?</span>
+								</h2>
+								<p class="opacity-50">Crypterium blockchain is most popular way to buy and sell cryptocurrency & NFTS.</p>
+							</div>
+							<div class="relative mx-auto flex max-w-2xl flex-wrap justify-center gap-y-10 gap-x-4 md:justify-between xl:max-w-[974px] 2xl:max-w-6xl">
+								<div class="relative w-36 text-center">
+									<div class="mb-7 inline-flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-b from-white/10 to-white/5">
+										<img src="assets/images/wallet.svg" alt="" />
+									</div>
+									<h6>Set up your wallet</h6>
+									<div class="dotted-animation absolute top-14 left-full hidden w-7 md:block xl:w-32 2xl:w-48"></div>
+								</div>
+								<div class="relative w-36 text-center">
+									<div class="mb-7 inline-flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-b from-white/10 to-white/5">
+										<img src="assets/images/collection.svg" alt="" />
+									</div>
+									<h6>Create your collection</h6>
+									<div class="dotted-animation absolute top-14 left-full hidden w-7 md:block xl:w-32 2xl:w-48"></div>
+								</div>
+								<div class="relative w-36 text-center">
+									<div class="mb-7 inline-flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-b from-white/10 to-white/5">
+										<img src="assets/images/add.svg" alt="" />
+									</div>
+									<h6>Add your NFTs</h6>
+									<div class="dotted-animation absolute top-14 left-full hidden w-7 md:block xl:w-32 2xl:w-48"></div>
+								</div>
+								<div class="w-36 text-center">
+									<div class="mb-7 inline-flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-b from-white/10 to-white/5">
+										<img src="assets/images/sale.svg" alt="" />
+									</div>
+									<h6>List them for sale</h6>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="pb-16 text-center">
+								<h2 class="pb-8 text-4xl font-semibold" data-aos="zoom-in" data-aos-duration="1000">
+									Our <span class="animate-text bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Collections</span>
+								</h2>
+								<p class="opacity-50">Explore our newly released NFT collections</p>
+							</div>
+							<div class="grid gap-8 sm:grid-cols-3">
+								<div class="flex flex-col gap-8">
+									<div class="group overflow-hidden rounded-2xl sm:h-3/5">
+										<img src="assets/images/collection-1.jpg" alt="" class="h-full w-full object-cover duration-500 group-hover:scale-110" />
+									</div>
+									<div class="group overflow-hidden rounded-2xl sm:h-2/5">
+										<img src="assets/images/collection-2.jpg" alt="" class="h-full w-full object-cover duration-500 group-hover:scale-110" />
+									</div>
+								</div>
+								<div class="group overflow-hidden rounded-2xl">
+									<img src="assets/images/collection-3.jpg" alt="" class="h-full w-full object-cover duration-500 group-hover:scale-110" />
+								</div>
+								<div class="flex flex-col gap-8">
+									<div class="group overflow-hidden rounded-2xl sm:h-2/5">
+										<img src="assets/images/collection-4.jpg" alt="" class="h-full w-full object-cover duration-500 group-hover:scale-110" />
+									</div>
+									<div class="group overflow-hidden rounded-2xl sm:h-3/5">
+										<img src="assets/images/collection-5.jpg" alt="" class="h-full w-full object-cover duration-500 group-hover:scale-110" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="py-14 md:pt-28 md:pb-20">
+							<div class="flex flex-col items-center gap-5 pb-14 sm:flex-row sm:justify-between">
+								<div class="flex flex-col items-center gap-8 xl:flex-row xl:items-center" data-aos="fade-left" data-aos-duration="2000">
+									<span class="text-4xl font-semibold">Partners /</span>
+									<span class="opacity-50">Related projects & partner</span>
+								</div>
+								<div class="inline-block rounded-lg bg-gradient-to-r from-secondary to-primary p-0.5">
+									<button type="button" class="wallet-btn group relative rounded-lg bg-black px-9 py-4 duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full">
+										<span class="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent group-hover:bg-none group-hover:text-black">View all</span>
+									</button>
+								</div>
+							</div>
+							<div class="grid grid-cols-2 items-center justify-center gap-6 border-y-[3px] border-white/10 py-10 md:grid-cols-4 md:py-20">
+								<a href="#" class="group"><span class="sr-only">partner logo</span><img src="assets/images/partner-logo-1.svg" alt="" class="mx-auto transition group-hover:scale-110" data-aos="zoom-out" data-aos-duration="2000" /></a>
+								<a href="#" class="group"><span class="sr-only">partner logo</span><img src="assets/images/partner-logo-2.svg" alt="" class="mx-auto transition group-hover:scale-110" data-aos="zoom-out" data-aos-duration="2000" /></a>
+								<a href="#" class="group"><span class="sr-only">partner logo</span><img src="assets/images/partner-logo-3.svg" alt="" class="mx-auto transition group-hover:scale-110" data-aos="zoom-out" data-aos-duration="2000" /></a>
+								<a href="#" class="group"><span class="sr-only">partner logo</span><img src="assets/images/partner-logo-4.svg" alt="" class="mx-auto transition group-hover:scale-110" data-aos="zoom-out" data-aos-duration="2000" /></a>
+							</div>
+							<div class="mt-14 items-center border-b-[3px] border-white/10 md:mt-24 xl:flex">
+								<div class="text-center xl:w-1/2 xl:text-left">
+									<h2 class="text-2xl leading-tight sm:text-4xl 2xl:w-2/3" data-aos="fade-down" data-aos-duration="1000">The medium you need, the people you’ll love.</h2>
+									<div class="inline-flex flex-wrap justify-center gap-6 pt-14 xl:justify-start">
+										<div class="rounded-lg bg-gradient-to-r from-secondary to-primary p-0.5">
+											<button type="button" class="wallet-btn group relative rounded-lg bg-black px-6 py-4 duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full">
+												<span class="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent group-hover:bg-none group-hover:text-black">NFT tags</span>
+											</button>
+										</div>
+										<div class="rounded-lg bg-gradient-to-r from-secondary to-primary p-0.5">
+											<button type="button" class="wallet-btn group relative rounded-lg bg-black px-6 py-4 duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full">
+												<span class="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent group-hover:bg-none group-hover:text-black">Crypto tags</span>
+											</button>
+										</div>
+										<div class="rounded-lg bg-gradient-to-r from-secondary to-primary p-0.5">
+											<button type="button" class="wallet-btn group relative rounded-lg bg-black px-6 py-4 duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full">
+												<span class="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent group-hover:bg-none group-hover:text-black">NFT community</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="relative mx-auto mt-10 grid h-[500px] w-full max-w-sm grid-cols-2 overflow-hidden rounded-t-full border-[3px] border-b-0 border-white/10 px-8 py-16 xl:ml-auto xl:mr-10 xl:mt-0">
+									<span class="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 bg-[#0e0f12]"></span>
+									<a href="#" class="inline-flex items-center justify-center border-b-[3px] border-white/10 transition hover:text-primary">
+										<span data-aos="fade-down-right" data-aos-duration="2000">
+											<span class="sr-only">Dribbble</span>
+											<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+												<path d="M24 45.767C11.9659 45.767 2.18182 35.9999 2.18182 23.9829C2.18182 11.9488 11.9659 2.18176 24 2.18176C36.0341 2.18176 45.8182 11.9488 45.8182 23.9659C45.8182 35.9829 36.0341 45.767 24 45.767ZM42.3921 26.9488C41.7614 26.7443 36.6307 25.2272 30.7841 26.1477C33.2216 32.8295 34.2102 38.284 34.3977 39.409C38.5909 36.5965 41.5739 32.1306 42.3921 26.9488ZM31.2784 41.1306C31.0057 39.4943 29.9148 33.8011 27.3068 27.017C27.2727 27.034 27.2216 27.0511 27.1875 27.0511C16.6705 30.7159 12.9034 37.9943 12.5625 38.6761C15.7159 41.1306 19.6875 42.5965 24 42.5965C26.5739 42.6136 29.0455 42.0852 31.2784 41.1306ZM10.1591 36.4431C10.5852 35.7272 15.6989 27.2727 25.3125 24.1534C25.5511 24.0681 25.8068 23.9999 26.0455 23.9318C25.5852 22.8749 25.0739 21.8181 24.5284 20.7784C15.2216 23.5568 6.18751 23.4374 5.36932 23.4204C5.36932 23.6079 5.35228 23.7954 5.35228 23.9829C5.36932 28.7727 7.17614 33.1363 10.1591 36.4431ZM5.76137 20.1818C6.5966 20.1988 14.2671 20.2329 22.9943 17.9147C19.9091 12.4261 16.5682 7.82381 16.0909 7.15904C10.858 9.61358 6.9716 14.4204 5.76137 20.1818ZM19.6364 5.89767C20.1477 6.57949 23.5398 11.1818 26.5909 16.7897C33.2216 14.3011 36.0171 10.5511 36.358 10.0738C33.0682 7.15904 28.7386 5.38631 24 5.38631C22.5 5.38631 21.0341 5.57381 19.6364 5.89767ZM38.4205 12.2215C38.0284 12.7499 34.9091 16.7556 28.0227 19.5681C28.4489 20.4545 28.875 21.3579 29.2671 22.2613C29.4034 22.5852 29.5398 22.909 29.6761 23.2159C35.8807 22.4318 42.0341 23.6931 42.6477 23.8124C42.5966 19.4318 41.0284 15.392 38.4205 12.2215Z" fill="currentColor" />
+											</svg>
+										</span>
+									</a>
+									<a href="#" class="inline-flex items-center justify-center border-b-[3px] border-l-[3px] border-white/10 transition hover:text-primary">
+										<span data-aos="fade-down-left" data-aos-duration="2000">
+											<span class="sr-only">Twitter</span>
+											<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+												<path d="M44 11.6001C42.4967 12.2522 40.9069 12.6834 39.28 12.8801C40.9963 11.8547 42.2825 10.2416 42.9 8.34005C41.2871 9.30018 39.5215 9.97665 37.68 10.3401C36.4491 9.0052 34.8099 8.11665 33.0196 7.81376C31.2293 7.51087 29.3891 7.81077 27.7876 8.66643C26.1861 9.52209 24.9139 10.8851 24.1705 12.5417C23.4271 14.1983 23.2546 16.0548 23.68 17.8201C20.4189 17.6551 17.2289 16.806 14.3173 15.3278C11.4057 13.8496 8.83769 11.7754 6.78 9.24005C6.05828 10.5004 5.67904 11.9277 5.68 13.3801C5.67744 14.7288 6.00843 16.0573 6.64351 17.2472C7.27859 18.4371 8.19804 19.4515 9.32 20.2001C8.01595 20.1646 6.73977 19.8147 5.6 19.1801V19.2801C5.60977 21.1698 6.27199 22.9982 7.47463 24.456C8.67727 25.9137 10.3465 26.9113 12.2 27.2801C11.4865 27.4972 10.7458 27.6117 10 27.6201C9.48378 27.614 8.96884 27.5672 8.46 27.4801C8.98782 29.1057 10.0092 30.5263 11.3821 31.5444C12.7551 32.5624 14.4112 33.1272 16.12 33.1601C13.2344 35.4306 9.67177 36.6698 6 36.6801C5.33147 36.6822 4.66347 36.6422 4 36.5601C7.74886 38.9806 12.1176 40.2655 16.58 40.2601C19.6594 40.292 22.7143 39.7101 25.5662 38.5482C28.4182 37.3863 31.01 35.6678 33.1904 33.493C35.3708 31.3183 37.0959 28.7308 38.2651 25.8819C39.4343 23.0329 40.0241 19.9795 40 16.9001C40 16.5601 40 16.2001 40 15.8401C41.5694 14.6697 42.9229 13.2349 44 11.6001Z" fill="currentColor" />
+											</svg>
+										</span>
+									</a>
+									<a href="#" class="inline-flex items-center justify-center transition hover:text-primary">
+										<span data-aos="fade-up-right" data-aos-duration="2000">
+											<span class="sr-only">Linkedin</span>
+											<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+												<path d="M1.19482 7.08744C1.19482 5.61654 1.70847 4.40307 2.73572 3.44704C3.76296 2.49096 5.09843 2.01294 6.74203 2.01294C8.35632 2.01294 9.66238 2.48359 10.6603 3.42497C11.6875 4.39575 12.2012 5.66067 12.2012 7.21982C12.2012 8.63186 11.7023 9.80852 10.7043 10.7499C9.67708 11.7207 8.32695 12.2061 6.65398 12.2061H6.60996C4.99568 12.2061 3.68962 11.7207 2.69169 10.7499C1.69376 9.77913 1.19482 8.5583 1.19482 7.08744ZM1.76716 45.6978V16.2215H11.5408V45.6978H1.76716ZM16.9559 45.6978H26.7296V29.2387C26.7296 28.2091 26.847 27.4148 27.0818 26.8559C27.4927 25.8557 28.1164 25.01 28.9529 24.3187C29.7894 23.6274 30.8386 23.2817 32.1007 23.2817C35.388 23.2817 37.0316 25.5027 37.0316 29.9448V45.6978H46.8052V28.7975C46.8052 24.4437 45.778 21.1416 43.7234 18.8912C41.6689 16.6407 38.954 15.5155 35.5787 15.5155C31.7925 15.5155 28.8428 17.1482 26.7296 20.4135V20.5018H26.6856L26.7296 20.4135V16.2215H16.9559C17.0146 17.1629 17.044 20.0899 17.044 25.0026C17.044 29.9153 17.0146 36.8137 16.9559 45.6978Z" fill="currentColor" />
+											</svg>
+										</span>
+									</a>
+									<a href="#" class="inline-flex items-center justify-center border-l-[3px] border-white/10 transition hover:text-primary">
+										<span data-aos="fade-up-left" data-aos-duration="2000">
+											<span class="sr-only">Instagram</span>
+											<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+												<path d="M34.68 10.92C34.2053 10.92 33.7413 11.0608 33.3466 11.3245C32.952 11.5882 32.6443 11.963 32.4627 12.4016C32.281 12.8401 32.2335 13.3227 32.3261 13.7882C32.4187 14.2538 32.6473 14.6814 32.9829 15.0171C33.3186 15.3527 33.7462 15.5813 34.2118 15.6739C34.6773 15.7665 35.1599 15.719 35.5984 15.5373C36.037 15.3557 36.4118 15.048 36.6755 14.6534C36.9392 14.2587 37.08 13.7947 37.08 13.32C37.08 12.6835 36.8271 12.073 36.3771 11.6229C35.927 11.1729 35.3165 10.92 34.68 10.92ZM43.88 15.76C43.8411 14.1006 43.5303 12.4588 42.96 10.9C42.4515 9.56626 41.66 8.35856 40.64 7.36C39.6496 6.33485 38.4391 5.54835 37.1 5.06C35.5453 4.47232 33.9017 4.15442 32.24 4.12C30.12 4 29.44 4 24 4C18.56 4 17.88 4 15.76 4.12C14.0983 4.15442 12.4547 4.47232 10.9 5.06C9.56335 5.5533 8.35387 6.33912 7.36 7.36C6.33485 8.35036 5.54835 9.56088 5.06 10.9C4.47232 12.4547 4.15442 14.0983 4.12 15.76C4 17.88 4 18.56 4 24C4 29.44 4 30.12 4.12 32.24C4.15442 33.9017 4.47232 35.5453 5.06 37.1C5.54835 38.4391 6.33485 39.6496 7.36 40.64C8.35387 41.6609 9.56335 42.4467 10.9 42.94C12.4547 43.5277 14.0983 43.8456 15.76 43.88C17.88 44 18.56 44 24 44C29.44 44 30.12 44 32.24 43.88C33.9017 43.8456 35.5453 43.5277 37.1 42.94C38.4391 42.4516 39.6496 41.6651 40.64 40.64C41.6645 39.6452 42.4567 38.4364 42.96 37.1C43.5303 35.5412 43.8411 33.8994 43.88 32.24C43.88 30.12 44 29.44 44 24C44 18.56 44 17.88 43.88 15.76ZM40.28 32C40.2654 33.2695 40.0355 34.5274 39.6 35.72C39.2807 36.5904 38.7678 37.3768 38.1 38.02C37.4513 38.681 36.6665 39.1929 35.8 39.52C34.6074 39.9555 33.3495 40.1854 32.08 40.2C30.08 40.3 29.34 40.32 24.08 40.32C18.82 40.32 18.08 40.32 16.08 40.2C14.7618 40.2247 13.4492 40.0217 12.2 39.6C11.3716 39.2562 10.6227 38.7456 10 38.1C9.33618 37.4575 8.82969 36.6704 8.52 35.8C8.03171 34.5903 7.76089 33.3039 7.72 32C7.72 30 7.6 29.26 7.6 24C7.6 18.74 7.6 18 7.72 16C7.72896 14.7021 7.9659 13.4159 8.42 12.2C8.77209 11.3558 9.31253 10.6033 10 10C10.6076 9.31234 11.3586 8.76619 12.2 8.4C13.4191 7.96009 14.704 7.73016 16 7.72C18 7.72 18.74 7.6 24 7.6C29.26 7.6 30 7.6 32 7.72C33.2695 7.73456 34.5274 7.96449 35.72 8.4C36.6289 8.7373 37.4446 9.28569 38.1 10C38.7554 10.6144 39.2675 11.3655 39.6 12.2C40.0445 13.4179 40.2746 14.7036 40.28 16C40.38 18 40.4 18.74 40.4 24C40.4 29.26 40.38 30 40.28 32ZM24 13.74C21.9716 13.744 19.9899 14.3491 18.3053 15.4788C16.6207 16.6086 15.3088 18.2124 14.5353 20.0875C13.7618 21.9626 13.5614 24.0249 13.9596 26.0139C14.3577 28.0028 15.3365 29.8291 16.7722 31.262C18.2078 32.6948 20.036 33.67 22.0257 34.0643C24.0154 34.4586 26.0773 34.2542 27.9509 33.4771C29.8245 32.6999 31.4258 31.3849 32.5523 29.6981C33.6788 28.0113 34.28 26.0284 34.28 24C34.2826 22.6502 34.0184 21.3132 33.5025 20.0659C32.9866 18.8186 32.2291 17.6856 31.2737 16.7321C30.3184 15.7786 29.1839 15.0234 27.9356 14.5099C26.6873 13.9964 25.3498 13.7347 24 13.74ZM24 30.66C22.6828 30.66 21.3951 30.2694 20.2999 29.5376C19.2047 28.8058 18.351 27.7656 17.847 26.5487C17.3429 25.3317 17.211 23.9926 17.468 22.7007C17.7249 21.4088 18.3593 20.2221 19.2907 19.2907C20.2221 18.3593 21.4088 17.7249 22.7007 17.468C23.9926 17.211 25.3317 17.3429 26.5487 17.847C27.7656 18.351 28.8058 19.2047 29.5376 20.2999C30.2694 21.3951 30.66 22.6828 30.66 24C30.66 24.8746 30.4877 25.7406 30.153 26.5487C29.8183 27.3567 29.3278 28.0909 28.7093 28.7093C28.0909 29.3278 27.3567 29.8183 26.5487 30.153C25.7406 30.4877 24.8746 30.66 24 30.66Z" fill="currentColor" />
+											</svg>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- LottieFiles Animation JS -->
+	<script src="assets/js/lottie-player.js"></script>
+	<!-- AOS Animation -->
+	<script src="assets/js/aos.js"></script>
+	<!-- Counter -->
+	<script src="assets/js/vanilla-counter.js"></script>
+	<!-- Custom Js -->
+	<script src="assets/js/custom.js"></script>
+
+	<script>
+		// Counter
+		VanillaCounter();
+
+		// Timer
+		var countDownDate = new Date("april 28, 2024 00:00:00").getTime();
+
+		var x = setInterval(function () {
+			var now = new Date().getTime();
+
+			var distance = countDownDate - now;
+
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+			document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+			document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+			document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("countdown").innerHTML = "EXPIRED";
+			}
+		}, 1000);
+	</script>
+</body>
+
+</html>
