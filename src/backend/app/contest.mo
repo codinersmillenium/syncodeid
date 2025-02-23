@@ -8,7 +8,7 @@ actor {
   public query func getContests() : async [TypesContest.Contest] {
     switch myInstance {
       case (?instance) {
-        instance.getContest();
+        instance.lists();
       };
       case null {
         throw Error.reject("Instance belum siap");

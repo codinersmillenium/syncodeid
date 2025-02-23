@@ -2,13 +2,13 @@ import Types "types";
 import Array "mo:base/Array";
 import Text "mo:base/Text";
 
-module ContestModule{
+module {
 
     public class Contest(_arg: Text) {
 
         var items: [Types.Contest] = [];
 
-        public func getContest() : [Types.Contest] {
+        public func lists() : [Types.Contest] {
             return items;
         };
 

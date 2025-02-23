@@ -1,17 +1,13 @@
 {
   "canisters": {
-    "main": {
-      "type": "motoko",
-      "main": "src/backend/main.mo"
-    },
-    "data_contest": {
-      "type": "motoko",
-      "main": "src/backend/app/contest.mo"
-    },
+    "main": { "type": "motoko", "main": "src/backend/main.mo" },
+    "data_contest": { "type": "motoko", "main": "src/backend/app/contest.mo" },
+    "data_contest_term": { "type": "motoko", "main": "src/backend/app/contest_term.mo" },
     "frontend": {
       "dependencies": [        
         "main",
-        "data_contest"
+        "data_contest",
+        "data_contest_term"
       ],
       "source": [
         "src/frontend/assets/view"
