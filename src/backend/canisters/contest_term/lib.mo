@@ -12,17 +12,17 @@ module {
             return items;
         };
 
-        public func create(data : Types.ContestTerm) : async Text {
+        public func create(data : Types.ContestTerm) : async [Types.ContestTerm] {
             let obj: Types.ContestTerm = {
                 id = data.id; 
                 name = data.name;
                 fk_contest = data.fk_contest;
             };
             items := Array.append(items, [obj]);
-            return "The term has been registered...";
+            return items;
         };
     
-        public func update(data : Types.ContestTerm) : async Text {
+        public func update(data : Types.ContestTerm) : async [Types.ContestTerm] {
             switch (Array.find<Types.ContestTerm>(items, func(c) { c.id == data.id })) {
                 case (_item) {
                     let obj = {
@@ -35,7 +35,7 @@ module {
                             return if (c.id == data.id) { obj } else { c };
                         });
                     };
-                    return "The term has been updated...";
+                    return items;
                 };
             };
         };
