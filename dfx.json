@@ -1,26 +1,34 @@
 {
-  "canisters": {
-    "main": { "type": "motoko", "main": "src/backend/main.mo" },
-    "data_contest": { "type": "motoko", "main": "src/backend/app/contest.mo" },
-    "data_contest_term": { "type": "motoko", "main": "src/backend/app/contest_term.mo" },
-    "frontend": {
-      "dependencies": [        
-        "main",
-        "data_contest",
-        "data_contest_term"
-      ],
-      "source": [
-        "src/frontend/assets/view"
-      ],
-      "type": "assets"
-    }
-  },
-  "defaults": {
-    "build": {
-      "args": "",
-      "packtool": ""
-    }
-  },
-  "output_env_file": ".env",
-  "version": 1
+	"canisters": {
+		"contest": {
+			"type": "motoko", 
+			"main": "src/backend/contest/main.mo"
+		},
+		"contestant": {
+			"type": "motoko",
+			"main": "src/backend/contestant/main.mo"
+		},
+		"token": {
+			"type": "motoko",
+			"main": "src/backend/token/erc20.mo"
+		},
+		"frontend": {
+			"dependencies": [        
+				"contest",
+				"contestant"
+			],
+			"source": [
+				"src/frontend/assets/view"
+			],
+			"type": "assets"
+		}
+	},
+	"defaults": {
+		"build": {
+			"args": "",
+			"packtool": ""
+		}
+	},
+	"output_env_file": ".env",
+	"version": 1
 }
