@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Landscape</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+    
+    <h2 class="text-xl font-semibold mb-6 text-center">Add Contest</h2>
+
+    <!-- Form -->
+    <form class="grid grid-cols-2 gap-4" id="form">
+      
+      <!-- Title -->
+      <div class="flex items-center">
+        <label class="w-40 text-gray-700">Title</label>
+        <input type="text" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="title" required>
+      </div>
+
+      <!-- Reward Token -->
+      <div class="flex items-center">
+        <label class="w-40 text-gray-700">Reward Token</label>
+        <input type="number" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="token" required>
+      </div>
+
+      <!-- Provider -->
+      <!-- <div class="flex items-center">
+        <label class="w-40 text-gray-700">Provider</label>
+        <input type="text" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div> -->
+
+      <!-- Start Date -->
+      <div class="flex items-center">
+        <label class="w-40 text-gray-700">Start Date</label>
+        <input type="date" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="start_date" required>
+      </div>
+
+      <!-- End Date -->
+      <div class="flex items-center">
+        <label class="w-40 text-gray-700">End Date</label>
+        <input type="date" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="end_date" required>
+      </div>
+
+      <!-- Publish Date -->
+      <div class="flex items-center">
+        <label class="w-40 text-gray-700">Publish Date</label>
+        <input type="date" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="publish_date" required>
+      </div>
+
+      <!-- Description -->
+      <div class="flex items-center col-span-2">
+        <label class="w-40 text-gray-700">Description</label>
+        <textarea class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="2" name="description" required></textarea>
+      </div>
+
+      <!-- Limit Participants -->
+      <div class="flex items-center">
+        <label class="w-40 text-gray-700">Limit Participants</label>
+        <input type="number" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="limit" required>
+      </div>
+
+      <!-- Submit Button (Full Width) -->
+      <div class="col-span-2 flex justify-center">
+        <button type="submit" class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+          Submit
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module">
+    import { createContests } from './assets/canisters/contests.js';
+
+    $(document).ready(function () {
+        $("#form").submit(async function (event) {            
+            try {
+                event.preventDefault();
+                const data = {
+                    'title' : $("[name='title']").val(),
+                    'rewardToken' : Number($("[name='token']").val()),
+                    'endDate' : Date.parse($("[name='end_date']").val()) * 1000,
+                    'publishDate' : Date.parse($("[name='publish_date']").val()) * 1000,
+                    'description' : $("[name='description']").val(),
+                    'limitParticipants' : Number($("[name='limit']").val()),
+                    'startDate' : Date.parse($("[name='start_date']").val()) * 1000,
+                }
+                const resp = await createContests(data)
+                if (resp?.ok) {
+                    setTimeout(() => {
+                        if (window.opener) {
+                            window.opener.location.reload();
+                        }
+                        window.close()
+                    }, 2000)
+                    alert("Sayembara berhasil dibuat...");
+                } else {
+                    alert(resp?.err || "Sayembara gagal dibuat");
+                }
+            } catch (error) {
+                console.log(error)
+            }	
+        });
+    });
+</script>
+</html>

@@ -5,36 +5,22 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Home | Blockchain</title>
+	<title>Home | Bionec</title>
 	<meta name="description" content="The cryptocurrency exchange of trust for individual and institutional traders & investors. An ethereum token backed by a human individual" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="http://example.com/" />
     <link rel="alternate" hrefLang="x-default" href="http://example.com/" />
-    <meta property="og:title" content="Home | Blockchain" />
+    <meta property="og:title" content="Home | Bionec" />
     <meta property="og:description" content="The cryptocurrency exchange of trust for individual and institutional traders & investors. An ethereum token backed by a human individual" />
-    <meta property="og:url" content="http://example.com/" />
+    <meta property="og:url" content="" />
     <meta property="og:site_name" content="Blockchain" />
     <meta property="og:image" content="http://example.com/assets/images/logo.png" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="Blockchain" />
-    <meta name="twitter:title" content="Home | Blockchain" />
-    <meta name="twitter:description" content="The cryptocurrency exchange of trust for individual and institutional traders & investors. An ethereum token backed by a human individual" />
-    <meta name="twitter:image" content="http://example.com/assets/images/logo.png" />
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Blockchain","url":"http://example.com","id":"http://example.com#organization","logo":"http://example.com/assets/images/logo.png","legalName":"Blockchain","sameAs":["http://example.com"]}</script>
-    <script
-        type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Blockchain","url":"http://example.com","id":"http://example.com#website"}</script>
-	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="assets/images/favicon.svg" />
-	<!-- AOS Animation -->
 	<link href="assets/css/aos.css" rel="stylesheet" />
-	<!-- Style CSS -->
 	<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
-	<!-- screen loader -->
 	<div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-black">
 		<div class="lds-hourglass relative inline-flex h-20 w-20 after:m-2 after:block after:h-0 after:w-0 after:rounded-full after:border-[32px] after:border-primary after:border-r-transparent after:border-l-transparent"></div>
 	</div>
@@ -52,9 +38,26 @@
                             <span class="sr-only">logo</span>
                             <img src="assets/images/logo.png" alt="" class="w-full" />
                         </a>
-						<button type="button" class="wallet-btn relative hidden bg-primary p-3.5 text-lg text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block">
-							Connect wallet
+						<button id="btn-login" type="button" class="wallet-btn relative hidden bg-primary p-3.5 text-lg text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block">
+							Login
 						</button>
+						<button id="btn-profile" type="button" class="relative bg-primary p-3.5 text-lg text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block" style="display: none;">
+							Profile
+						</button>
+						<div id="modalRegist" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+							<div class="bg-black font-unbounded text-lg font-normal text-white antialiased rounded-lg shadow-lg p-6 w-96">
+								<h2 class="text-xl font-semibold mb-4 text-center">Register As</h2>
+								<p class="text-gray-600 text-center mb-4">Choose your role:</p>
+								<div class="flex flex-col gap-3 mt-4">
+									<button type="button" data-role="Provider" class="relative bg-primary p-3.5 text-md text-black shadow-[4px_4px_0_#0D804F] btn-role">
+										Provider
+									</button>
+									<button type="button" data-role="Contestant" class="relative bg-primary p-3.5 text-md text-black shadow-[4px_4px_0_#0D804F] btn-role">
+										Contestant
+									</button>
+								</div>
+							</div>
+						</div>
 						<button type="button" onclick="toggleMenu()" class="block space-y-2 lg:hidden">
 							<span class="sr-only">Toggle menu</span>
 							<span class="block h-0.5 w-9 bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
@@ -80,7 +83,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="trade-risk.html" class="nav-link">
+								<a href="contest.html" class="nav-link">
 									<span class="shrink-0">
 										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
 											<g>
@@ -90,19 +93,7 @@
 											</g>
 										</svg>
 									</span>
-									<span>Trade risk</span>
-								</a>
-							</li>
-							<li>
-								<a href="claims.html" class="nav-link">
-									<span class="shrink-0">
-										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-											<g>
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 15.625C4.5 10.8287 4.5 8.43048 5.06627 7.62367C5.63255 6.81687 7.88749 6.045 12.3974 4.50125L13.2566 4.20714C15.6075 3.40242 16.7829 3.00006 18 3.00006C19.2171 3.00006 20.3925 3.40242 22.7434 4.20714L23.6026 4.50125C28.1125 6.045 30.3675 6.81687 30.9337 7.62367C31.5 8.43048 31.5 10.8287 31.5 15.625V17.9871C31.5 26.4442 25.1416 30.5483 21.1522 32.291C20.07 32.7637 19.5289 33.0001 18 33.0001C16.4711 33.0001 15.93 32.7637 14.8478 32.291C10.8584 30.5483 4.5 26.4442 4.5 17.9871V15.625ZM21 13.5001C21 15.1569 19.6569 16.5001 18 16.5001C16.3431 16.5001 15 15.1569 15 13.5001C15 11.8432 16.3431 10.5001 18 10.5001C19.6569 10.5001 21 11.8432 21 13.5001ZM18 25.5001C24 25.5001 24 24.1569 24 22.5001C24 20.8432 21.3137 19.5001 18 19.5001C14.6863 19.5001 12 20.8432 12 22.5001C12 24.1569 12 25.5001 18 25.5001Z" fill="currentColor" />
-											</g>
-										</svg>
-									</span>
-									<span>Claims</span>
+									<span>Contest</span>
 								</a>
 							</li>
 							<li>
@@ -130,18 +121,6 @@
 									<span>About us</span>
 								</a>
 							</li>
-							<li>
-								<a href="nft.html" class="nav-link">
-									<span class="shrink-0">
-										<svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-											<g>
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3ZM16.8411 12.8536L13.8185 15.2606C12.5504 16.2704 11.9164 16.7753 12.0401 17.3391L12.0467 17.367C12.1877 17.9273 12.9914 18.1427 14.5989 18.5734C15.4921 18.8127 15.9388 18.9324 16.1483 19.271L16.1591 19.2888C16.3612 19.6314 16.2462 20.0606 16.0162 20.9188L15.9561 21.1431C15.3185 23.5226 14.9997 24.7124 15.6137 25.0966C16.2277 25.4809 17.2046 24.7029 19.1584 23.1471L22.181 20.7401C23.4491 19.7303 24.0832 19.2253 23.9594 18.6616L23.9528 18.6336C23.8118 18.0733 23.0081 17.858 21.4006 17.4273C20.5074 17.1879 20.0608 17.0683 19.8512 16.7297L19.8404 16.7119C19.6383 16.3692 19.7533 15.9401 19.9833 15.0819L20.0434 14.8575C20.681 12.478 20.9998 11.2882 20.3858 10.904C19.7718 10.5197 18.7949 11.2977 16.8411 12.8536Z" fill="currentColor" />
-											</g>
-										</svg>
-									</span>
-									<span>Nft</span>
-								</a>
-							</li>
 							<li class="sticky inset-x-0 bottom-0">
 								<button type="button" class="block w-full bg-primary p-3.5 text-black shadow-[0_4px_0_#0D804F] lg:hidden">Connect wallet</button>
 							</li>
@@ -155,69 +134,234 @@
 							<div class="relative pt-24 text-center lg:text-left">
 								<h2 class="mb-6 text-4xl font-semibold leading-tight sm:text-[52px]" data-aos="zoom-in-right" data-aos-duration="1500" data-aos-delay="800">
 									<span class="inline-flex items-center gap-5">
-										<span class="shrink-0">Unlock the</span>
+										<span class="shrink-0">Boost Business</span>
 										<div class="relative shrink-0 animate-pulse">
 											<img src="assets/images/decentralized.png" alt="" />
 											<img src="assets/images/Vector1.png" alt="" class="absolute right-8 bottom-10 min-w-[150px]" />
 										</div>
 									</span>
-									decentralized
-									<span class="animate-text mx-auto block bg-gradient-to-r from-[#9A42FE] to-[#23EF9B] bg-clip-text text-transparent lg:mx-0">future.</span>
+									Earn
+									<span class="animate-text mx-auto block bg-gradient-to-r from-[#9A42FE] to-[#23EF9B] bg-clip-text text-transparent lg:mx-0">Rewards.</span>
 								</h2>
 								<p class="font-light leading-7 opacity-40 2xl:pr-24">
-									The cryptocurrency exchange of trust for individual and institutional traders & investors. An ethereum token backed by a human individual
+									Boost Your Business with Blockchain: Earn Tokens and Unlock Rewards!
 								</p>
 								<div class="mx-auto mt-10 flex w-full max-w-xl items-center gap-3 border-y-2 border-white/10 py-7 sm:mt-16 lg:mx-0" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="800">
-									<h4 class="shrink-0 animate-pulse text-2xl font-semibold text-primary sm:text-5xl">3.8 M+</h4>
-									<span class="block h-[3px] w-full rounded-full bg-gradient-to-r from-primary via-tertiary to-secondary"></span>
-									<h6 class="shrink-0 animate-pulse text-base font-medium sm:text-xl">Market network</h6>
+									<button class="rounded-full px-4 py-2 font-semibold text-sm bg-white dark:bg-slate-700 text-slate-700 dark:text-white border border-slate-300 dark:border-slate-600 hover:border-indigo-300 dark:hover:border-slate-400 rounded-md shadow-sm" id="scroll-button">
+										Get Started
+									</button>
 								</div>
 							</div>
 							<div class="relative flex items-center justify-center 2xl:ml-16">
-								<lottie-player src="assets/js/json/main-banner.json" background="transparent" speed="0.4" loop autoplay class="w-full max-w-xl"></lottie-player>
+								<video width="640" height="360" autoplay loop muted preload="auto">
+									<source src="assets/images/globe.webm" type="video/webm">
+								</video>
 							</div>
 						</div>
-						<div class="relative py-6">
-							<div class="cloak-img relative w-32 sm:w-48">
-								<img src="assets/images/cloak.png" alt="" />
+						<!-- process -->
+						<div class="relative">
+							<div class="items-start xl:flex mb-8 py-12">
+								<div class="flex flex-col pb-10 xl:w-2/5 xl:pb-0">
+									<div class="relative order-2 overflow-hidden rounded-[50px] bg-white/10 px-4 pb-20 pt-5 text-center xl:order-1 xl:rounded-r-none xl:pt-20 xl:pb-60">
+										<span>
+											<img src="assets/images/process-design.svg" alt="" class="ml-auto" />
+										</span>
+										<div class="relative inline-block" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+											<h2 class="animate-text text-gradiant text-3xl font-semibold leading-tight md:text-[40px]">How to process?</h2>
+											<span class="absolute left-16 -top-8 animate-spin-slow">
+												<img src="assets/images/star.svg" alt="" />
+											</span>
+											<span class="absolute -left-7 top-0">
+												<img src="assets/images/plus-vector.svg" alt="" />
+											</span>
+										</div>
+										<div class="absolute top-0 left-1/2 flex -translate-x-1/2 gap-4">
+											<div class="bar bar1"></div>
+											<div class="bar bar2"></div>
+											<div class="bar bar3"></div>
+											<div class="bar bar4"></div>
+											<div class="bar bar1"></div>
+											<div class="bar bar5"></div>
+											<div class="bar bar6"></div>
+										</div>
+									</div>
+									<div class="order-1 pb-10 text-center xl:order-2 xl:pb-0 xl:pt-10 xl:pr-10 xl:text-left">
+										<h2 class="relative text-2xl font-semibold leading-tight md:text-[20px]">
+											<span class="animate-text text-gradiant font-semibold leading-tight">Boost your business</span> with blockchain marketing and <span class="animate-text text-gradiant font-semibold leading-tight">earn tokens</span> by completing missions...
+											<span class="absolute left-6 bottom-0 hidden animate-pulse lg:block xl:-bottom-16" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="800">
+												<img src="assets/images/two-line-svg.png" alt="" />
+											</span>
+										</h2>
+									</div>
+								</div>
+								<div class="rounded-[50px] bg-white/10 p-4 sm:p-7 xl:w-3/5 xl:rounded-tl-none" >
+									<div class="space-y-14 rounded-[50px] border-[3px] border-white/10 px-4 py-10 sm:px-6" id="target-section">
+										<div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+											<div class="flex border-b border-gray-200">
+												<button id="tab1-btn" class="tab-btn text-blue-600 border-b-2 border-blue-600 px-4 py-2 text-sm font-medium">
+													Contestant
+												</button>
+												<button id="tab2-btn" class="tab-btn text-gray-600 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 px-4 py-2 text-sm font-medium">
+													Provider
+												</button>
+											</div>
+											<div id="tab1-content" class="tab-content">
+												<div class="text-center sm:text-left">
+													<div class="items-end gap-6 pb-6 font-semibold sm:inline-flex">
+														<span class="text-[32px]">01</span>
+														<span class="hidden sm:block">
+															<svg width="90" height="16" viewBox="0 0 90 16" fill="none" class="process-arrow">
+																<path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM89.7071 8.70711C90.0976 8.31658 90.0976 7.68342 89.7071 7.29289L83.3431 0.928932C82.9526 0.538408 82.3195 0.538408 81.9289 0.928932C81.5384 1.31946 81.5384 1.95262 81.9289 2.34315L87.5858 8L81.9289 13.6569C81.5384 14.0474 81.5384 14.6805 81.9289 15.0711C82.3195 15.4616 82.9526 15.4616 83.3431 15.0711L89.7071 8.70711ZM1 9H89V7H1V9Z" fill="white" />
+															</svg>
+														</span>
+														<h5 class="my-5 text-[22px] sm:my-0">Register and Login</h5>
+														<div class="process-icon sm:-mb-5">
+															<img src="assets/images/trading-chain.png" alt="" class="mx-auto sm:mx-0" />
+														</div>
+													</div>
+													<p class="text-base leading-5 opacity-50">
+														Sign up now and create your account effortlessly. Start exploring exciting tasks on our platform!
+													</p>
+												</div>
+												<div class="text-center sm:text-left">
+													<div class="items-end gap-6 pb-6 font-semibold sm:inline-flex">
+														<span class="text-[32px]">02</span>
+														<span class="hidden sm:block">
+															<svg width="90" height="16" viewBox="0 0 90 16" fill="none" class="process-arrow">
+																<path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM89.7071 8.70711C90.0976 8.31658 90.0976 7.68342 89.7071 7.29289L83.3431 0.928932C82.9526 0.538408 82.3195 0.538408 81.9289 0.928932C81.5384 1.31946 81.5384 1.95262 81.9289 2.34315L87.5858 8L81.9289 13.6569C81.5384 14.0474 81.5384 14.6805 81.9289 15.0711C82.3195 15.4616 82.9526 15.4616 83.3431 15.0711L89.7071 8.70711ZM1 9H89V7H1V9Z" fill="white" />
+															</svg>
+														</span>
+														<h5 class="my-5 text-[22px] sm:my-0">Take a Task</h5>
+														<div class="process-icon sm:-mb-5">
+															<img src="assets/images/buying-bits.png" alt="" class="mx-auto sm:mx-0" />
+														</div>
+													</div>
+													<p class="text-base leading-5 opacity-50">
+														Choose a task that suits you, such as "Follow a Twitter account" or "Retweet a post." Follow the provided steps and join our growing community.
+													</p>
+												</div>
+												<div class="text-center sm:text-left">
+													<div class="items-end gap-6 pb-6 font-semibold sm:inline-flex">
+														<span class="text-[32px]">03</span>
+														<span class="hidden sm:block">
+															<svg width="90" height="16" viewBox="0 0 90 16" fill="none" class="process-arrow">
+																<path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM89.7071 8.70711C90.0976 8.31658 90.0976 7.68342 89.7071 7.29289L83.3431 0.928932C82.9526 0.538408 82.3195 0.538408 81.9289 0.928932C81.5384 1.31946 81.5384 1.95262 81.9289 2.34315L87.5858 8L81.9289 13.6569C81.5384 14.0474 81.5384 14.6805 81.9289 15.0711C82.3195 15.4616 82.9526 15.4616 83.3431 15.0711L89.7071 8.70711ZM1 9H89V7H1V9Z" fill="white" />
+															</svg>
+														</span>
+														<h5 class="my-5 text-[22px] sm:my-0">Complete and Claim Tokens</h5>
+														<div class="process-icon sm:-mb-5">
+															<img src="assets/images/block-chain-system.png" alt="" class="mx-auto sm:mx-0" />
+														</div>
+													</div>
+													<p class="text-base leading-5 opacity-50">
+														Finish the task, submit proof of your activity, and claim your token rewards quickly after verification. The more active you are, the more rewards you can earn!
+													</p>
+													<div class="font-semibold sm:inline-flex">
+														<p class="text-left mt-4">
+															This platform offers an exciting way to earn rewards by completing simple, engaging tasks. Whether it’s following accounts, sharing posts, or engaging with content, you can turn your participation into valuable tokens. It’s a fun, rewarding experience that connects you with brands while letting you benefit from your contributions.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div id="tab2-content" class="tab-content hidden">
+												<div class="text-center sm:text-left">
+													<div class="items-end gap-6 pb-6 font-semibold sm:inline-flex">
+														<span class="text-[32px]">01</span>
+														<span class="hidden sm:block">
+															<svg width="90" height="16" viewBox="0 0 90 16" fill="none" class="process-arrow">
+																<path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM89.7071 8.70711C90.0976 8.31658 90.0976 7.68342 89.7071 7.29289L83.3431 0.928932C82.9526 0.538408 82.3195 0.538408 81.9289 0.928932C81.5384 1.31946 81.5384 1.95262 81.9289 2.34315L87.5858 8L81.9289 13.6569C81.5384 14.0474 81.5384 14.6805 81.9289 15.0711C82.3195 15.4616 82.9526 15.4616 83.3431 15.0711L89.7071 8.70711ZM1 9H89V7H1V9Z" fill="white" />
+															</svg>
+														</span>
+														<h5 class="my-5 text-[22px] sm:my-0">Register and Login</h5>
+														<div class="process-icon sm:-mb-5">
+															<img src="assets/images/trading-chain.png" alt="" class="mx-auto sm:mx-0" />
+														</div>
+													</div>
+													<p class="text-base leading-5 opacity-50">
+														Create an account and log in to access your dashboard. Start organizing your marketing tasks in just a few clicks!
+													</p>
+												</div>
+												<div class="text-center sm:text-left">
+													<div class="items-end gap-6 pb-6 font-semibold sm:inline-flex">
+														<span class="text-[32px]">02</span>
+														<span class="hidden sm:block">
+															<svg width="90" height="16" viewBox="0 0 90 16" fill="none" class="process-arrow">
+																<path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM89.7071 8.70711C90.0976 8.31658 90.0976 7.68342 89.7071 7.29289L83.3431 0.928932C82.9526 0.538408 82.3195 0.538408 81.9289 0.928932C81.5384 1.31946 81.5384 1.95262 81.9289 2.34315L87.5858 8L81.9289 13.6569C81.5384 14.0474 81.5384 14.6805 81.9289 15.0711C82.3195 15.4616 82.9526 15.4616 83.3431 15.0711L89.7071 8.70711ZM1 9H89V7H1V9Z" fill="white" />
+															</svg>
+														</span>
+														<h5 class="my-5 text-[22px] sm:my-0">Create a Task</h5>
+														<div class="process-icon sm:-mb-5">
+															<img src="assets/images/buying-bits.png" alt="" class="mx-auto sm:mx-0" />
+														</div>
+													</div>
+													<p class="text-base leading-5 opacity-50">
+														Set up your task by choosing the type of activity (e.g., “Follow on Twitter”) and the platform. Add details such as deadlines, rewards, and instructions for participants.
+													</p>
+												</div>
+												<div class="text-center sm:text-left">
+													<div class="items-end gap-6 pb-6 font-semibold sm:inline-flex">
+														<span class="text-[32px]">03</span>
+														<span class="hidden sm:block">
+															<svg width="90" height="16" viewBox="0 0 90 16" fill="none" class="process-arrow">
+																<path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM89.7071 8.70711C90.0976 8.31658 90.0976 7.68342 89.7071 7.29289L83.3431 0.928932C82.9526 0.538408 82.3195 0.538408 81.9289 0.928932C81.5384 1.31946 81.5384 1.95262 81.9289 2.34315L87.5858 8L81.9289 13.6569C81.5384 14.0474 81.5384 14.6805 81.9289 15.0711C82.3195 15.4616 82.9526 15.4616 83.3431 15.0711L89.7071 8.70711ZM1 9H89V7H1V9Z" fill="white" />
+															</svg>
+														</span>
+														<h5 class="my-5 text-[22px] sm:my-0">Track and Reward </h5>
+														<div class="process-icon sm:-mb-5">
+															<img src="assets/images/block-chain-system.png" alt="" class="mx-auto sm:mx-0" />
+														</div>
+													</div>
+													<p class="text-base leading-5 opacity-50">
+														Monitor the completion of tasks in real-time. Once verified, distribute tokens seamlessly to participants as rewards.
+													</p>
+													<div class="font-semibold sm:inline-flex">
+														<p class="text-left mt-4">
+															By using this platform, you are employing a highly effective marketing strategy to grow your reach. Engaging participants with tasks such as following social media accounts or sharing content helps amplify your brand visibility, boost audience engagement, and build loyalty—all while rewarding participants for their efforts. It's a win-win solution for both your brand and your audience.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="relative z-1 -mt-4 overflow-x-hidden bg-primary p-4">
 								<ul class="flex animate-marquee gap-4 whitespace-nowrap text-sm font-medium text-black sm:text-xl">
-									<li>Trade Tokens</li>
+									<li>Earn Tokens</li>
 									•
-									<li>Mint NFTs</li>
+									<li>ICP Token</li>
 									•
-									<li>Game On-Chain</li>
+									<li>Boost Business</li>
 									✦
-									<li>Trade Tokens</li>
+									<li>Earn Tokens</li>
 									•
-									<li>Mint NFTs</li>
+									<li>ICP Token</li>
 									•
-									<li>Game On-Chain</li>
+									<li>Boost Business</li>
 									✦
-									<li>Trade Tokens</li>
+									<li>Earn Tokens</li>
 									•
-									<li>Mint NFTs</li>
+									<li>ICP Token</li>
 									•
-									<li>Game On-Chain</li>
+									<li>Boost Business</li>
 									✦
-									<li>Trade Tokens</li>
+									<li>Earn Tokens</li>
 									•
-									<li>Mint NFTs</li>
+									<li>ICP Token</li>
 									•
-									<li>Game On-Chain</li>
+									<li>Boost Business</li>
 									✦
-									<li>Trade Tokens</li>
+									<li>Earn Tokens</li>
 									•
-									<li>Mint NFTs</li>
+									<li>ICP Token</li>
 									•
-									<li>Game On-Chain</li>
+									<li>Boost Business</li>
 									✦
-									<li>Trade Tokens</li>
+									<li>Earn Tokens</li>
 									•
-									<li>Mint NFTs</li>
+									<li>ICP Token</li>
 									•
-									<li>Game On-Chain</li>
+									<li>Boost Business</li>
 								</ul>
 							</div>
 						</div>
@@ -226,13 +370,44 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- LottieFiles Animation JS -->
-	<script src="assets/js/lottie-player.js"></script>
-	<!-- AOS Animation -->
-	<script src="assets/js/aos.js"></script>
-	<!-- Custom Js -->
+	<script src="assets/js/lottie-player.js"></script>	
+	<script src="assets/js/aos.js"></script>	
 	<script src="assets/js/custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="module">
+		import { checkAndLogin, sendPrincipalToBackend} from "./assets/plugins/auth_icp.js"
+		$(document).on('click', '#btn-login', function(){
+			checkAndLogin()
+		})
+		$(document).on('click', '.btn-role', function(){
+			const role = $(this).attr('data-role')
+			sendPrincipalToBackend(role)
+		})
+	</script>
+	<script>
+		const tabs = document.querySelectorAll(".tab-btn")
+		const contents = document.querySelectorAll(".tab-content")
+		tabs.forEach((tab, index) => {
+		  tab.addEventListener("click", () => {
+			tabs.forEach(t => t.classList.remove("text-blue-600", "border-b-2", "border-blue-600"))
+			contents.forEach(c => c.classList.add("hidden"))
+			tab.classList.add("text-blue-600", "border-b-2", "border-blue-600")
+			contents[index].classList.remove("hidden")
+		  })
+		})		
+		document.getElementById("scroll-button").addEventListener("click", function () {
+			document.getElementById("target-section").scrollIntoView({
+				behavior: "smooth"
+			})
+		})
+		$(document).ready(function(){
+			const auth = localStorage.getItem('auth')
+			if (auth) {
+				$('#btn-login').attr('style', 'display: none')
+				$('#btn-profile').removeAttr('style')
+			}
+		})
+	  </script>	  
 </body>
 
 </html>

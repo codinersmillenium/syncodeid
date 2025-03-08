@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Landscape</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+    
+    <h2 class="text-xl font-semibold mb-6 text-center">Add Terms</h2>
+
+    <!-- Form -->
+    <form class="grid grid-cols-2 gap-4" id="form">
+      
+      <!-- Title -->
+      <div class="flex items-center col-span-2">
+        <label class="w-40 text-gray-700">Title / Name</label>
+        <input type="text" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="title" required>
+      </div>
+
+      <!-- Description -->
+      <div class="flex items-center col-span-2">
+        <label class="w-40 text-gray-700">Description</label>
+        <textarea class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="2" name="description" required></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="marketing_type" class="block text-sm font-medium text-gray-700">Types of Marketing</label>
+        <select id="marketing_type" name="marketing_type"
+          class="mt-2 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          <option value="social_media" selected>Media Sosial</option>
+          <option value="content_marketing" disabled>Konten Marketing (coming soon)</option>
+        </select>
+      </div>
+
+      <!-- Platform -->
+      <div class="mb-2">
+        <label for="platform" class="block text-sm font-medium text-gray-700">Platforms Used</label>
+        <select id="platform" name="platform"
+          class="mt-2 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          <option value="0" selected>Twitter</option>
+          <option value="instagram" disabled>Instagram (coming soon)</option>
+          <option value="telegram" disabled>Youtube (coming soon)</option>
+        </select>
+        <div class="mb-2">
+          <label class="block text-sm font-medium text-gray-700">Activity Type</label>
+          <div class="mt-2">
+            <div>
+              <input type="checkbox" id="sub_task_follow" name="sub_task[]" value="follow"
+                class="h-4 w-4 text-blue-600 border-gray-300 rounded" checked disabled>
+              <label for="sub_task_follow" class="ml-2 text-sm text-gray-700">Follow Account</label>
+            </div>
+            <div>
+              <input type="checkbox" id="sub_task_like" name="sub_task[]" value="like"
+                class="h-4 w-4 text-blue-600 border-gray-300 rounded" disabled>
+              <label for="sub_task_like" class="ml-2 text-sm text-gray-700">Like Post (coming soon)</label>
+            </div>
+            <div>
+              <input type="checkbox" id="sub_task_comment" name="sub_task[]" value="comment"
+                class="h-4 w-4 text-blue-600 border-gray-300 rounded" disabled>
+              <label for="sub_task_comment" class="ml-2 text-sm text-gray-700">Comments on Posts (coming soon)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center col-span-2">
+        <label class="w-40 text-gray-700">Account ID</label>
+        <input type="text" class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="account_id" required>
+      </div>
+
+      <!-- Submit Button (Full Width) -->
+      <div class="col-span-2 flex justify-center">
+        <button type="submit" class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+          Submit
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module">
+    import { createContestsTerm } from './assets/canisters/contests.js';
+
+    $(document).ready(function () {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id')
+      if (!id) {
+        window.close()
+        return
+      }
+      $("#form").submit(async function (event) {            
+          try {
+              event.preventDefault();
+              const data = {
+                'idContest': Number(id),
+                'name' : $("[name='title']").val(),
+                'description' : $("[name='description']").val(),
+                'follow' : $("[name='account_id']").val(),
+                'followType' : 0
+              }
+              const resp = await createContestsTerm(data)
+              if (resp?.ok) {
+                  alert("Tugas berhasil ditambahkan");
+              } else {
+                  alert("Tugas gagal ditambahkan");
+              }
+          } catch (error) {
+              console.log(error)
+          }	
+      });
+    });
+</script>
+</html>

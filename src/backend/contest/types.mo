@@ -37,10 +37,21 @@ module {
 		id 		  : Nat;
 		idContest : Nat;
 		name      : Text;
+		description: Text;
+		follow: Text;
+		followType: Int;
 	};
 
     public type ContestTermsRequest = {
         idContest : Nat;
 		name 	  : Text;
+		description: Text;
+		follow: Text;
+		followType: Int;
 	};
+
+	public type ContestTermFollowType = {
+		id: Int;
+		name: Text;
+	}
 };

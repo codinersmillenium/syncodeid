@@ -48,6 +48,9 @@ module {
                 id        = getNextContestTermsId();
                 idContest = req.idContest;
                 name      = req.name;
+                description = req.description;
+                follow    = req.follow;
+                followType = req.followType;
             };
 
             contestTerms.put(term.id, term);

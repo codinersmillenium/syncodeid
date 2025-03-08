@@ -15,13 +15,18 @@ actor {
 	private stable var stableContestBalances : [SvcContest.StableContestBalances] = [];
 	private stable var stablePrincipals : [SvcContest.StablePrincipals]           = [];
 	private let contests = SvcContest.Contest(nextContestId, stableContests, stableContestBalances, stablePrincipals);
+    private let followType: [TypContest.ContestTermFollowType] = [{id = 0; name = "twitter";}]; // default temp
 
     public shared({caller}) func addBalance() : async () {
         let balance = await CntToken.balanceOf(caller);
         await CntToken.updateBalance(caller, balance + 100);
 	};
 
-	public query func getAllContests(filter : TypContest.ContestFilter) : async Result.Result<[TypContest.Contest], ()> {
+	public query func getfollowType() : async Result.Result<[TypContest.ContestTermFollowType], ()> {
+        return #ok(followType);
+    };
+
+    public query func getAllContests(filter : TypContest.ContestFilter) : async Result.Result<[TypContest.Contest], ()> {
         return #ok(contests.getContests(filter));
     };
 

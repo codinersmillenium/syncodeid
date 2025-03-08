@@ -1,0 +1,24 @@
+{
+  "name": "syncodeid-main",
+  "version": "1.0.0",
+  "description": "Hackaton 11 ICP",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx vite",
+    "build": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.3",
+    "vite": "^6.2.1",
+    "vite-plugin-html": "^3.2.2"
+  },
+  "dependencies": {
+    "@dfinity/agent": "^2.3.0",
+    "@dfinity/auth-client": "^2.3.0",
+    "dotenv": "^16.4.7"
+  }
+}
