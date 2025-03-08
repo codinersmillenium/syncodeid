@@ -12,7 +12,7 @@ export const checkAndLogin = async () => {
         initIdentity(identity)
     } else {
         await authClient.login({
-            identityProvider: "http://localhost:4349/?canisterId=",// canister local icp
+            identityProvider: "http://localhost:4943/?canisterId=gl6nx-5maaa-aaaaa-qaaqq-cai",// canister local icp
             onSuccess: async () => {
                 identity = authClient.getIdentity();
                 initIdentity(identity)
@@ -55,10 +55,10 @@ export const sendPrincipalToBackend = async (role) => {
 
 export const getUser = async (identity) => {
     const localAgent = await HttpAgent.create({
-        host: "http://127.0.0.1:4349",
+        host: "http://127.0.0.1:4943",
         identity: identity 
     });
-    canister = createActor(canisterId, { // jika tidak terdefinisi, clear cache atau masukkan canister id yang baru
+    canister = createActor('gf4a7-g4aaa-aaaaa-qaarq-cai', { // jika tidak terdefinisi, clear cache atau masukkan canister id yang baru
         agent: localAgent
     });
     const user = await canister.getUser()

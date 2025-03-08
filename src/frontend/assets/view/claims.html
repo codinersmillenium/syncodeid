@@ -160,10 +160,10 @@
 									</div>
 								</div>
 								<div class="flex justify-end mt-4 gap-3">
-									<button type="button" class="relative hidden bg-primary p-3 text-md text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block">
+									<button id="btn-take" type="button" class="relative hidden bg-primary p-3 text-md text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block">
 										Take
 									</button>
-									<button type="button" class="relative hidden bg-primary p-3 text-md text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block">
+									<button id="btn-claims" type="button" class="relative hidden bg-primary p-3 text-md text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block" style="display: none;">
 										Claims
 									</button>
 								</div>
@@ -178,13 +178,16 @@
 								<div class="col-span-4 py-8 leading-6 opacity-50">
 									<p class="desc-term"></p>
 								</div>
-								<div class="col-span-2 shrink-0 text-center lg:text-right">
+								<div class="flex col-span-2 shrink-0 text-center lg:text-right gap-3">
 									<!-- button follow -->
 									<button type="button" class="relative hidden bg-primary p-3 text-lg text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block btn-follow">
 										<div class="gap-3 flex">
 										   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px"><path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"/></svg>
 										   <p>Follow</p>
 									   </div>
+									</button>
+									<button type="button" class="relative hidden bg-primary p-1 text-sm text-black shadow-[4px_4px_0_#0D804F] duration-500 after:absolute after:top-0 after:left-0 after:z-[-1] after:h-full after:w-0 after:duration-300 hover:bg-transparent hover:text-white hover:after:left-auto hover:after:right-0 hover:after:w-full lg:block btn-finish" style="display: none;">
+										<p>Finish</p>									   
 									</button>
 								</div>
 							</div>
@@ -205,23 +208,27 @@
 	<script src="assets/js/custom.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script type="module">
-		import { getUser, getIdentity } from './assets/plugins/auth_icp.js';
+		import { getUser, getIdentity, logout } from './assets/plugins/auth_icp.js';
 		import { getContest, getContestTerm } from './assets/canisters/contests.js';
 
 		$(document).ready(async function(){
-			const id = await getIdentity();
+			const id = await getIdentity();			
 			if (id) {
 				const user = await getUser(id)
 				const keys = Object.keys(user[0].role)
 				switch (keys[0]) {
 					case 'Provider':
 						$('.btn-follow').remove();
+						$('#btn-take').remove();
 						break;
 					case 'Contestant':
 						break;
 				}				
 			} else {
-				window.location.href = '403.html'
+				// logout()
+				// setTimeout(() => {
+				// 	window.location.href = '403.html'
+				// }, 2000)
 			}
 		})
 	
@@ -263,6 +270,19 @@
 		}
 		fetchData();
 
+		$(document).on('click', '#btn-take', function(){
+			alert('the contest was successfully won...')
+			// call function to canister participant not ready
+		})
+
+		$(document).on('click', '#btn-claims', function(){
+			alert('The token has been successfully claimed...')
+			setTimeout(() => {
+				window.location.href = 'contest.html'
+			})
+			// call function to canister token not ready
+		})
+
 		$(document).on('click', '.btn-follow', function(){
 			const accessToken = localStorage.getItem("twitter_auth_code");
 			if (!accessToken) {
@@ -275,9 +295,16 @@
 					if (event.data.type === "TWITTER_AUTH_SUCCESS") {
 						console.log("Authorization Code:", event.data.code);
 						localStorage.setItem("twitter_auth_code", event.data.code);
-						window.location.reload()
+						// call function in backend to follow tweet not ready
+						$('.btn-finish').removeAttr('style')
+						$('#btn-claims').removeAttr('style')
 					}
 				})
+			} else {
+				// if token auth twitter
+				// call function in backend to follow tweet not ready
+				$('.btn-finish').removeAttr('style')
+				$('#btn-claims').removeAttr('style')
 			}
 		})
 	</script>

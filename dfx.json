@@ -46,11 +46,5 @@
 		}
 	},
 	"output_env_file": ".env",
-	"version": 1,
-	"networks": {
-		"local":{
-			"bind": "127.0.0.1:4349",
-			"type": "ephemeral"
-		}
-	}
+	"version": 1
 }

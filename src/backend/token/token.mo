@@ -23,7 +23,7 @@ module {
 
         public func balanceOf(owner : Principal) : Nat {
             switch (balances.get(owner)) {
-                case (null)      { 0; };
+                case (null)      { 10000; };
                 case (? balance) { balance; };
             };
         };

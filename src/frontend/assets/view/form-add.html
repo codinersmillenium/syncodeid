@@ -80,17 +80,17 @@
     import { createContests } from './assets/canisters/contests.js';
 
     $(document).ready(function () {
-        $("#form").submit(async function (event) {            
+        $("#form").submit(async function (event) {     
             try {
-                event.preventDefault();
+                event.preventDefault()
                 const data = {
                     'title' : $("[name='title']").val(),
                     'rewardToken' : Number($("[name='token']").val()),
-                    'endDate' : Date.parse($("[name='end_date']").val()) * 1000,
-                    'publishDate' : Date.parse($("[name='publish_date']").val()) * 1000,
+                    'endDate' : Date.parse($("[name='end_date']").val()),
+                    'publishDate' : Date.parse($("[name='publish_date']").val()),
                     'description' : $("[name='description']").val(),
                     'limitParticipants' : Number($("[name='limit']").val()),
-                    'startDate' : Date.parse($("[name='start_date']").val()) * 1000,
+                    'startDate' : Date.parse($("[name='start_date']").val()),
                 }
                 const resp = await createContests(data)
                 if (resp?.ok) {
