@@ -6,7 +6,7 @@
 </p>
 
 ## [Install the IC SDK]
-   - `https://internetcomputer.org/docs/building-apps/getting-started/quickstart`
+   - [https://internetcomputer.org/docs/building-apps/getting-started/quickstart](https://internetcomputer.org/docs/building-apps/getting-started/quickstart)
 
 ## 🚀 Initial Project
     - Change directory cd {MyProject}
