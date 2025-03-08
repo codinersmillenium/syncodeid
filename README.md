@@ -1,9 +1,9 @@
 # syncodeid
 Hackaton 11 ICP
 
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="./src/frontend/assets/view/assets/images/landing-page.png" width="350" title="Admin Panel">
-</div>
+<p align="center">
+  <img src="./src/frontend/assets/view/assets/images/landing-page.png" width="100%" title="Landing Page">
+</p>
 
 install dfx in `https://internetcomputer.org/docs/building-apps/getting-started/quickstart`
 
