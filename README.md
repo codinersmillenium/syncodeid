@@ -5,7 +5,8 @@
   <img src="./src/frontend/assets/view/assets/images/landing-page.png" width="100%" title="Landing Page">
 </p>
 
-## [Install the IC SDK](`https://internetcomputer.org/docs/building-apps/getting-started/quickstart`)
+## [Install the IC SDK]
+   - `https://internetcomputer.org/docs/building-apps/getting-started/quickstart`
 
 ## 🚀 Initial Project
     - Change directory cd {MyProject}
