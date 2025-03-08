@@ -7,7 +7,7 @@ Hackaton 11 ICP
 
 install dfx in `https://internetcomputer.org/docs/building-apps/getting-started/quickstart`
 
-🚀 Initial Project
+## 🚀 Initial Project
     - Change directory cd {MyProject}
     - dfx start or dfx start --clean
     - Install dependencies npm install
