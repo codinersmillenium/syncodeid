@@ -1,6 +1,7 @@
 import { AuthClient } from "@dfinity/auth-client"
-import { createActor, canisterId } from "../../../../../declarations/user/index.js"
 import { HttpAgent } from "@dfinity/agent";
+import { canisterId } from "../../../../../declarations/internet_identity/index.js";
+import { createActorUser, canisterUser } from "../canisters/users.js";
 
 let canister;
 let identity;
@@ -12,7 +13,7 @@ export const checkAndLogin = async () => {
         initIdentity(identity)
     } else {
         await authClient.login({
-            identityProvider: "http://localhost:4943/?canisterId=gl6nx-5maaa-aaaaa-qaaqq-cai",// canister local icp
+            identityProvider: "http://localhost:4943/?canisterId=" + canisterId, // canister local icp
             onSuccess: async () => {
                 identity = authClient.getIdentity();
                 initIdentity(identity)
@@ -58,7 +59,7 @@ export const getUser = async (identity) => {
         host: "http://127.0.0.1:4943",
         identity: identity 
     });
-    canister = createActor('gf4a7-g4aaa-aaaaa-qaarq-cai', { // jika tidak terdefinisi, clear cache atau masukkan canister id yang baru
+    canister = createActorUser(canisterUser, { // jika tidak terdefinisi, clear cache atau masukkan canister id secara manual
         agent: localAgent
     });
     const user = await canister.getUser()
